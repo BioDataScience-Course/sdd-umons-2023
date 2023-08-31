@@ -148,8 +148,10 @@ Comme vous pouvez le voir à la Fig. \@ref(fig:histo-classes), le changement du 
 
 La SciViews Box propose un **snippet RStudio** pour réaliser un histogramme. Il s'appelle `.cuhist` (pour **c**hart -\> **u**nivariate -\> **hist**ogram). Entrez ce code dans une zone d'édition R et appuyez ensuite sur la tabulation, et vous verrez le code remplacé par ceci :
 
-    chart(data = DF, ~VARNUM) +
-      geom_histogram(binwidth = 30)
+```         
+chart(data = DF, ~VARNUM) +
+  geom_histogram(binwidth = 30)
+```
 
 L'argument `binwidth=` permet de préciser la largeur des classes. C'est une autre façon de spécifier le découpage en classes, mais vous pouvez naturellement le remplacer par l'argument `bins=` si vous préférez.
 
@@ -273,7 +275,7 @@ if (exists("assignment"))
     course.ids = c(
       'S-BIOG-006' = !"A03Ia_{YY}M_distributions"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/p0skoF-c"),
+      'S-BIOG-006' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-006' = !"{W[8]+1} 13:00:00"),
     course.ends = c(
@@ -437,7 +439,7 @@ if (exists("assignment2"))
     course.ids = c(
       'S-BIOG-006' = !"A03Ga_{YY}M_urchin"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/ewTVBC8e"),
+      'S-BIOG-006' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-006' = !"{W[8]+5} 08:00:00"),
     course.ends = c(

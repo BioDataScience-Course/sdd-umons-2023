@@ -1,5 +1,5 @@
-# This bookdown in its version 2022 needs the following R packages
-#  R 4.1.3
+# This bookdown in its version 2023 needs the following R packages
+#  R 4.2.3
 # Use the following to list all dependencies:
 #imports <- unique(c("bookdown", "learnitdown", "SciViews",
 #  attachment::att_from_rmds(".")))
@@ -44,7 +44,10 @@ devtools::install_github("SciViews/svBase")
 devtools::install_github("SciViews/svFlow")
 devtools::install_github("SciViews/data.io")
 devtools::install_github("SciViews/chart")
+devtools::install_github("SciViews/tabularise")
 devtools::install_github("SciViews/exploreit")
+devtools::install_github("SciViews/modelit")
+devtools::install_github("SciViews/inferit")
 devtools::install_github("SciViews/SciViews")
 devtools::install_github("rstudio/learnr")
 devtools::install_github("rstudio/gradethis")

@@ -1,17 +1,19 @@
 # TODO for sdd-umons
 
-- Indicate how to configure RStudio for GitHub authentication, see https://www.r-bloggers.com/rstudio-pushing-to-github-with-ssh-authentication/.
+-   First course presentation & "plan de cours"
 
-- Read Moderndive, in particular, the part about hypothesis tests: https://moderndive.com/C-appendixC.html. See also here: https://www-huber.embl.de/msmb/Chap-Testing.html and here http://jonathanweisberg.org/vip/chlindley.html (very interesting).
+-   Indicate how to configure RStudio for GitHub authentication, see <https://www.r-bloggers.com/rstudio-pushing-to-github-with-ssh-authentication/>.
 
-- Sampling distribution, a whole chapter on this topic in French to cite in *en savoir plus*\ : https://www.math.u-psud.fr/~pansu/web_ifips/echantillonnage.pdf.
+-   Read Moderndive, in particular, the part about hypothesis tests: <https://moderndive.com/C-appendixC.html>. See also here: <https://www-huber.embl.de/msmb/Chap-Testing.html> and here <http://jonathanweisberg.org/vip/chlindley.html> (very interesting).
 
-- Experimental design and power of hypothesis tests (also show how to correctly interpret tests by adjusting alpha value in function of the context). Package `pwr`, see https://www.statmethods.net/stats/power.html.
+-   Sampling distribution, a whole chapter on this topic in French to cite in *en savoir plus* : <https://www.math.u-psud.fr/~pansu/web_ifips/echantillonnage.pdf>.
 
-- Two-way ANOVA, see http://www.biostathandbook.com/twowayanova.html.
+-   Experimental design and power of hypothesis tests (also show how to correctly interpret tests by adjusting alpha value in function of the context). Package `pwr`, see <https://www.statmethods.net/stats/power.html>.
 
-- Add warning relative to backup of data.
+-   Two-way ANOVA, see <http://www.biostathandbook.com/twowayanova.html>.
 
-- Annex A, Github account - Sensitisation to the "netiquette" and building a digital professional identity
+-   Add warning relative to backup of data.
 
-- Quick guide to uninstall the SciViews Box + how to backup important files? + transport a SciViews Box to another computer
+-   Annex A, Github account - Sensitisation to the "netiquette" and building a digital professional identity
+
+-   Quick guide to uninstall the SciViews Box + how to backup important files? + transport a SciViews Box to another computer

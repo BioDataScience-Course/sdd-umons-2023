@@ -60,7 +60,7 @@ Le préambule de ce cours vous a également permis d'en apprendre davantage sur 
 
 `r learnr("A00La_discovery", title = "Découverte de learnr", toc = "Découverte des tutoriels de type learnr")`
 
-Vous pouvez aussi voir (ou revoir) [les dias de la présentation](https://github.com/BioDataScience-Course/sdd_lessons/raw/2022-2023/A00/presentations/A00Pa_intro.pdf) qui vous est faite en première séance.
+Vous pouvez aussi voir (ou revoir) [les dias de la présentation](https://github.com/BioDataScience-Course/sdd_lessons/raw/2023-2024/A00/presentations/A00Pa_intro.pdf) qui vous est faite en première séance.
 
 ##### À vous de jouer ! {.unnumbered}
 
@@ -192,7 +192,7 @@ if (exists("assignment2"))
     course.ids = c(
       'S-BIOG-006' = !"A01Ga_{YY}M_biology_challenge"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/xhKU8A0b"),
+      'S-BIOG-006' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-006' = !"{W[3]+1} 13:00:00"),
     course.ends = c(
@@ -365,18 +365,22 @@ Observez les deux images et tentez de repérer chaque différence entre les deux
 
 Nous avons donc la structure suivante :
 
-    /mon_projet          # Le répertoire de base du projet
-      .gitignore         # Fichier relatif à la gestion de version
-      mon_projet.Rproj   # Fichier de configuration du projet créé par RStudio
+```         
+/mon_projet          # Le répertoire de base du projet
+  .gitignore         # Fichier relatif à la gestion de version
+  mon_projet.Rproj   # Fichier de configuration du projet créé par RStudio
+```
 
 On retrouve trois dossiers principaux dans un projet en science des données. Il y a le dossier `data`, le dossier `docs` et le dossier `R`.
 
-    /mon_projet          # Le répertoire de base du projet
-      .gitignore         # Fichier relatif à la gestion de version
-      data               # Le dossier qui contient les données
-      docs               # Le dossier avec les documents de type rapport, présentation, ...
-      mon_projet.Rproj   # Fichier de configuration du projet créé par RStudio
-      R                  # Le dossier où sont rassemblés les scripts R
+```         
+/mon_projet          # Le répertoire de base du projet
+  .gitignore         # Fichier relatif à la gestion de version
+  data               # Le dossier qui contient les données
+  docs               # Le dossier avec les documents de type rapport, présentation, ...
+  mon_projet.Rproj   # Fichier de configuration du projet créé par RStudio
+  R                  # Le dossier où sont rassemblés les scripts R
+```
 
 ##### À vous de jouer ! {.unnumbered}
 
@@ -405,7 +409,7 @@ if (exists("assignment"))
     course.ids = c(
       'S-BIOG-006' = !"A01Ia_{YY}M_covid19"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/vx1LJoz1"),
+      'S-BIOG-006' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-006' = !"{W[3]+5} 08:00:00"),
     course.ends = c(

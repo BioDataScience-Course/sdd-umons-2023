@@ -226,7 +226,7 @@ if (exists("assignment"))
     course.ids = c(
       'S-BIOG-027' = !"A11Ia_{YY}M_anova2"),
     course.urls = c(
-      'S-BIOG-027' = "https://classroom.github.com/a/XmOGeiYB"),
+      'S-BIOG-027' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-027' = !"{W[33]+1} 13:00:00"),
     course.ends = c(
@@ -966,7 +966,11 @@ Il y aurait encore beaucoup à dire sur les différents styles de syntaxe dans R
 
 Pour finir, il parait que les belges sont forts en autodérision. La caricature suivante devrait vous faire sourire :
 
-<center>![Prolifération de standards par xkcd.](https://imgs.xkcd.com/comics/standards.png)</center>
+<center>
+
+![Prolifération de standards par xkcd.](https://imgs.xkcd.com/comics/standards.png)
+
+</center>
 
 ##### À vous de jouer ! {.unnumbered}
 
@@ -989,7 +993,7 @@ if (exists("assignment2"))
     course.ids = c(
       'S-BIOG-027' = !"A08Ga_{YY}M_human_health"),
     course.urls = c(
-      'S-BIOG-027' = "https://classroom.github.com/a/Ff0IwHCb"),
+      'S-BIOG-027' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-027' = !"{W[29]+1} 13:00:00"),
     course.ends = c(

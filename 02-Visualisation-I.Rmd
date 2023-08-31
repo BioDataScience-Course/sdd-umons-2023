@@ -162,8 +162,10 @@ Vous avez la possibilité d'appliquer une transformation à vos données (il est
 
 RStudio permet de récupérer rapidement des instructions à partir d'une banque de solutions toutes prêtes. Cela s'appelle des **snippets**. Vous avez une série de snippets disponibles dans la SciViews Box. Celui qui vous permet de réaliser un graphique en nuage de points s'appelle `.cbxy` (pour **c**hart -\> **b**ivariate -\> **xy**-plot). Entrez ce code et appuyez ensuite sur la tabulation dans un script R, et vous verrez le code remplacé par ceci dans la fenêtre d'édition :
 
-    chart(data = DF, YNUM ~ XNUM) +
-      geom_point()
+```         
+chart(data = DF, YNUM ~ XNUM) +
+  geom_point()
+```
 
 Vous avez à votre disposition un ensemble de snippets que vous pouvez retrouver dans l'aide-mémoire consacré à [**SciViews**](https://github.com/BioDataScience-Course/sdd_cheatsheets/raw/master/SciViews/sciviews.pdf). Vous avez également à votre disposition l'aide-mémoire sur la visualisation des données ([**Data Visualization Cheat Sheet**](https://www.rstudio.com/resources/cheatsheets/)) qui utilise la fonction `ggplot()` plutôt que `chart()` et une interface légèrement différente pour spécifier les variables à utiliser pour réaliser le graphique (`aes(x = ..., y = ...)`).
 
@@ -221,7 +223,7 @@ if (exists("assignment2"))
     course.ids = c(
       'S-BIOG-006' = !"A02Ga_{YY}M_describe_charts"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/adgqCg-c"),
+      'S-BIOG-006' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-006' = !"{W[5]+5} 08:00:00"),
     course.ends = c(
@@ -263,7 +265,7 @@ if (exists("assignment"))
     course.ids = c(
       'S-BIOG-006' = !"A02Ia_{YY}M_scatterplot"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/6oBAO9wR"),
+      'S-BIOG-006' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-006' = !"{W[5]+5} 10:00:00"),
     course.ends = c(

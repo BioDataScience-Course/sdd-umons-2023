@@ -238,7 +238,9 @@ $$y \ en \ fonction \ de \ x$$
 
 Avec *y* une variable numérique et *x* une variable facteur. Considérez l'échantillon suivant :
 
-    1, 71, 55, 68, 78, 60, 83, 120, 82 ,53, 26
+```         
+1, 71, 55, 68, 78, 60, 83, 120, 82 ,53, 26
+```
 
 Calculez la moyenne sur base de la formule de la moyenne
 
@@ -342,7 +344,9 @@ Vous souhaitez représenter graphiquement cette fois *un résumé* d'une variabl
 
 Considérez l'échantillon suivant :
 
-    1, 71, 55, 68, 78, 60, 83, 120, 82 ,53, 26
+```         
+1, 71, 55, 68, 78, 60, 83, 120, 82 ,53, 26
+```
 
 Ordonnons-le de la plus petite à la plus grande valeur :
 
@@ -721,7 +725,7 @@ if (exists("assignment"))
     course.ids = c(
       'S-BIOG-006' = !"A04Ia_{YY}M_graphe_avance"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/rC-B3-yK"),
+      'S-BIOG-006' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-006' = !"{W[10]+1} 13:00:00"),
     course.ends = c(
@@ -756,7 +760,7 @@ if (exists("assignment2"))
     course.ids = c(
       'S-BIOG-006' = !"A04Ga_{YY}M_decision tree"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/7x6JxNFH "),
+      'S-BIOG-006' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-006' = !"{W[10]+5} 08:00:00"),
     course.ends = c(
@@ -767,7 +771,11 @@ if (exists("assignment2"))
 
 ## Différents moteurs graphiques
 
-<center>![Prolifération des standards d\'après xkcd.](https://imgs.xkcd.com/comics/standards.png)</center>
+<center>
+
+![Prolifération des standards d'après xkcd.](https://imgs.xkcd.com/comics/standards.png)
+
+</center>
 
 Depuis le début, l'ensemble des graphiques que nous vous avons proposés utilise la fonction `chart()` du package {chart}. Cependant, il ne s'agit pas de la seule fonction permettant de réaliser des graphiques dans R, loin de là. En fait {chart} est tout récent et a été développé pour homogénéiser autant que possible les graphiques issus de trois moteurs graphiques différents : {ggplot2}, {lattice} et les graphiques de base. La fonction `chart()` a d'autres avantages également :
 
