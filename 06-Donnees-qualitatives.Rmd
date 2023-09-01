@@ -487,9 +487,9 @@ if (exists("assignment2"))
     course.urls = c(
       'S-BIOG-006' = "https://classroom.github.com/a/..."),
     course.starts = c(
-      'S-BIOG-006' = !"{W[12]+5} 10:00:00"),
+      'S-BIOG-006' = !"{W[14]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[14]+5} 23:59:59"),
+      'S-BIOG-006' = !"{W[15]+3} 23:59:59"),
     term = "Q1", level = 4, n = 4,
     toc = "Collecte de données relative à l'obésité")
 ```
