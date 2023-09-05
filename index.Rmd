@@ -71,7 +71,7 @@ Le matériel pédagogique est aussi varié que possible. Vous pourrez ainsi pioc
 
 -   des [dépôts GitHub Classroom](https://classroom.github.com/) dans la section [BioDataScience-Course](https://www.github.com/BioDataScience-Course) pour réaliser et documenter vos travaux personnels. Les liens vers ces dépôts sont repérables par l'icône GitHub [![assign](images/list-assign.png)](https://wp.sciviews.org/github_assignment/){target="_parent"},
 
--   des renvois vers des documents externes en ligne, des vidéos [Youtube](https://www.youtube.com/) ou [Vimeo](https://vimeo.com/), des livres en anglais ou en français, des blogs, des tutoriels, des questions sur des sites comme [Stackoverflow](https://stackoverflow.com/) ou issues des [mailing lists R](https://www.r-project.org/mail.html), de [X  (ex Twitter)](https://twitter.com/), ...
+-   des renvois vers des documents externes en ligne, des vidéos [Youtube](https://www.youtube.com/) ou [Vimeo](https://vimeo.com/), des livres en anglais ou en français, des blogs, des tutoriels, des questions sur des sites comme [Stackoverflow](https://stackoverflow.com/) ou issues des [mailing lists R](https://www.r-project.org/mail.html), de [X (ex Twitter)](https://twitter.com/), ...
 
 -   des diapositives de présentations distribuées via le dépôt [sdd_lessons sur BioDataScience-Course](https://github.com/BioDataScience-Course/sdd_lessons/tree/2023-2024).
 
@@ -182,7 +182,7 @@ if (exists("assignment2"))
       'S-BIOG-006' = !"A00Ga_{YY}M_issues",
       'S-BIOG-921' = !"A00Ga_{YY}C_issues"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/...",
+      'S-BIOG-006' = "https://classroom.github.com/a/tynu_a4e",
       'S-BIOG-921' = "https://classroom.github.com/a/..."),
     course.ends = c(
       'S-BIOG-006' = !"{W[53]+5} 23:59:59",
@@ -204,3 +204,19 @@ Une fois que vous avez rejoint l'équipe **`r !"A{YY}"`**, il n'est plus nécess
 *Pour terminer, encore un petit exercice rapide pour vérifier si vous avez lu suffisamment attentivement le contenu ci-dessus...*
 
 `r h5p(134, height = 270, toc = "Adresse mail pour l'aide sur le cours")`
+
+## Déroulement du cours {#temps .unnumbered}
+
+Le cours est divisé en 12 modules. Comme expliqué précédemment, les exercices et les projets de niveau 1 à 3 ont pour objectif de vous préparer aux exercices plus complexes. Vous réaliserez ces exercices dans chaque module de ce cours.
+
+Les projets de niveau 4, les challenges et les interrogations sont les activités qui contribuent le plus à votre note finale. Vous trouverez ci-dessous les modules qui comprennent ces activités.
+
+Pour le premier quadrimestre
+
+![](images/sdd1_00/sdd1_q1_orga.drawio.png)
+
+Pour le second quadrimestre
+
+![](images/sdd1_00/sdd1_q2_orga.drawio.png)
+
+Les informations données ci-dessus sont données à titre indicatif. Elles sont susceptibles d'évoluer au cours de l'année académique.
