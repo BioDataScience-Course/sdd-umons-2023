@@ -608,7 +608,7 @@ La Fig. \@ref(fig:boxplot-tooth) présente un graphique en boites de dispersion 
 
 ```{r}
 # Importation du jeu de données ToothGrowth
-(tooth_growth <- read("ToothGrowth", package = "datasets"))
+(tooth_growth <- read("ToothGrowth", package = "datasets", lang = "fr"))
 # Remaniement et labelisation du jeu de données
 tooth_growth$dose <- as.ordered(tooth_growth$dose)
 tooth_growth <- labelise(tooth_growth, self = FALSE,
@@ -672,19 +672,17 @@ L'une des règles les plus importantes que vous devez impérativement garder à 
 
 ```{r chick1, fig.cap= "Croissance de poulets en utilisant quatre aliments différents."}
 # Importation de données relative à la croissance de poulets
-(chick_weight <- read("ChickWeight", package = "datasets"))
+(chick_weight <- read("ChickWeight", package = "datasets", lang = "fr"))
 # Réalisation du graphique (points semi-transparents)
-chart(data = chick_weight, weight ~ Time %col=% Diet) +
-  geom_point(alpha = 0.5) +
-  labs(x = "Age [j]", y = "Masse [g]")
+chart(data = chick_weight, weight ~ time %col=% diet) +
+  geom_point(alpha = 0.5)
 ```
 
 Le graphique à la Fig. \@ref(fig:chick1) est mal adapté pour montrer les différences entre les quatre aliments : tous les points sont entremêlés. Il peut typiquement être simplifié en utilisant des facettes pour représenter les résultats relatifs aux différents régimes alimentaires sur des graphiques séparés. L'information est la même, mais la lecture est beaucoup plus aisée.
 
 ```{r chick-facette, fig.cap= "Croissance de poulets en utilisant quatre aliments différents (1-4)."}
-chart(data = chick_weight, weight ~ Time | Diet) +
-  geom_point(alpha = 0.5) +
-  labs(x = "Age [j]", y = "Masse [g]")
+chart(data = chick_weight, weight ~ time | diet) +
+  geom_point(alpha = 0.5)
 ```
 
 Vous observez que les échelles en abscisse et en ordonnée sont similaires sur tous les graphiques. Cela permet une meilleure comparaison. Notez toutefois que, plus le nombre de facettes augmente, plus chaque graphique individuel devient petit. Faites attention à ne pas finir avec des graphiques individuels tellement petits qu'ils en deviennent illisibles !
@@ -842,14 +840,14 @@ b <- ggplot(data = urchin, mapping = aes(x = weight, y = height)) +
 combine_charts(list(a, b))
 ```
 
-Enfin, pour ceux qui n'aiment pas la notation utilisant le `+` (car elle fait trop penser à une addition, ce qu'elle ne fait pas ici), vous pouvez aussi utiliser la fonction `gg()` du package {chart}. Cette fonction transforme toutes les commandes {ggplot2} / {chart} qui doivent être combinées à l'aide de `+` en commandes pouvant être combinées à l'aide de l'opérateur de pipe de R de base `|>`. Ce dernier opérateur est typiquement utilisé pour composer une instruction complexe à l'aide de plusieurs instructions simples (les blocs de construction). Il est donc plus logique ici. De l'aveu même de son auteur, {ggplot2} aurait utilisé `|>` à la place de `+` si cet opérateur existait à l'époque où ggplot a été conçu. Donc, `gg()` vient en quelque sorte corriger le tir. Pour utiliser `gg()`, vous remplacez le `+` par `|>`, et vous débutez le nom de votre fonction {ggplot2} par `gg$`. C'est tout. Don,c, vous écrirez :
+Enfin, pour ceux qui n'aiment pas la notation utilisant le `+` (car elle fait trop penser à une addition, ce qu'elle ne fait pas ici), vous pouvez aussi utiliser la fonction `Sgg()` du package {chart}. Cette fonction transforme toutes les commandes {ggplot2} / {chart} qui doivent être combinées à l'aide de `+` en commandes pouvant être combinées à l'aide de l'opérateur de pipe de R de base `|>`. Ce dernier opérateur est typiquement utilisé pour composer une instruction complexe à l'aide de plusieurs instructions simples (les blocs de construction). Il est donc plus logique ici. De l'aveu même de son auteur, {ggplot2} aurait utilisé `|>` à la place de `+` si cet opérateur existait à l'époque où ggplot a été conçu. Donc, `Sgg()` vient en quelque sorte corriger le tir. Pour utiliser `Sgg()`, vous remplacez le `+` par `|>`, et vous débutez le nom de votre fonction {ggplot2} par `Sgg$` (seule exception: `ggtitle()` ne devient pas `Sgg$ggtitle()`, ùais `Sgg$title()`). C'est tout. Donc, vous écrirez :
 
 ```{r chart-ggplot2-gg, fig.cap= "Graphique réalisé en utilisant `gg$`."}
 chart(data = urchin, height ~ weight) |>
-  gg$geom_point()
+  Sgg$geom_point()
 ```
 
-De plus, vous bénéficiez pleinement de l'aide via la complétion de RStudio avec `gg()`. En effet, lorsque vous avez entré `gg$` dans l'éditeur ou à la fenêtre console de RStudio, une liste apparaît avec toutes les options possibles.
+De plus, vous bénéficiez pleinement de l'aide via la complétion de RStudio avec `Sgg()`. En effet, lorsque vous avez entré `Sgg$` dans l'éditeur ou à la fenêtre console de RStudio, une liste apparaît avec toutes les options possibles.
 
 ##### Exercez-vous {.unnumbered}
 

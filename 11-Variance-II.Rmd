@@ -259,7 +259,7 @@ skimr::skim(eggs)
 Commençons par corriger l'encodage erroné des techniciens qui ferait penser que seulement deux personnes ont travaillé dans l'ensemble des six laboratoires.
 
 ```{r}
-eggs <- fmutate(eggs, Technician = interaction(Lab, Technician))
+eggs <- smutate(eggs, Technician = interaction(Lab, Technician))
 skimr::skim(eggs)
 ```
 
@@ -385,9 +385,7 @@ Visualisons ces données. En absence de réplicas pour chaque niveau `plate` par
 
 ```{r}
 chart(data = pen, diameter ~ plate | sample) +
-  geom_point() +
-  xlab("Boite de Pétri") +
-  ylab("Diamètre d'action de la pénicilline [mm]")
+  geom_point()
 ```
 
 Sur base du graphique, nous pouvons observer des différences entre lots (le 'F' semble moins efficace, alors que les lots 'A' et 'C' montrent le plus grand diamètre d'action). De plus, des variations d'une boite de Pétri à l'autre sont observables. Par exemple, la boite 'g' montre des résultats faibles partout. Si nous considérons `sample` et `plate` comme facteurs fixes, nous serions tentés d'utiliser une ANOVA à deux facteurs classique sans interactions. Ici, nous n'avons pas de test de variance qui prenne simultanément deux facteurs en compte. En absence d'interactions entre les deux facteurs, nous pouvons toujours réaliser deux tests séparés mais cela reste du domaine du "bidouillage" (nous verrons une meilleure approche via l'analyse des résidus plus loin) :
@@ -549,14 +547,14 @@ skimr::skim(sleep)
 Un graphique pertinent ici relie les points relatifs aux tests de chaque patient afin de bien montrer le lien entre les mesures issues des mêmes sujets, soit un graphique de ce type :
 
 ```{r}
-chart(data = sleep, Reaction ~ Days %col=% Subject) +
+chart(data = sleep, reaction ~ days %col=% subject) +
   geom_line()
 ```
 
 Nous pouvons aussi utiliser des facettes si ce graphique est trop encombré :
 
 ```{r}
-chart(data = sleep, Reaction ~ Days | Subject) +
+chart(data = sleep, reaction ~ days | subject) +
   geom_line()
 ```
 
@@ -565,7 +563,7 @@ Comme nous pouvons nous y attendre, le temps de réaction semble augmenter en fo
 Nous pouvons, par contre, faire la supposition que la variation du temps de réaction soit linéaire, et le représenter graphiquement comme suit :
 
 ```{r}
-chart(data = sleep, Reaction ~ Days | Subject) +
+chart(data = sleep, reaction ~ days | subject) +
   geom_point() +
   stat_smooth(method = "lm") # Ajuste une droite sur les données
 ```
@@ -577,7 +575,7 @@ $$y_{ijk} = \mu + \tau1_j + \tau2_k(\tau1_j) + \epsilon_i \mathrm{\ avec\ } \tau
 Avec `lmerTest::lmer()`, cela donne (notez la formulation particulière `(fact1 | fact 2)` pour marquer l'imbrication) :
 
 ```{r}
-sleep_rep <- lmerTest::lmer(data = sleep, Reaction ~ Days + (Days | Subject))
+sleep_rep <- lmerTest::lmer(data = sleep, reaction ~ days + (days | subject))
 sleep_rep
 ```
 
