@@ -14,7 +14,7 @@
 
 ```{block, type='note'}
 
-Les liens cliquables qui vont sont proposés dans ce cours ont été sélectionné pour vous. La section **Prérequis** vous permet de vous assurer que vous avez toutes les connaissances nécessaires pour aborder le module dans les meilleures conditions possibles.
+Les liens cliquables qui vous sont proposés dans ce cours ont été sélectionné pour vous. La section **Prérequis** vous permet de vous assurer que vous avez toutes les connaissances nécessaires pour aborder le module dans les meilleures conditions possibles.
 
 **Cliquez sur ces liens**
 
@@ -24,7 +24,7 @@ Tous les exercices de ce cours vont être réalisés sur un ordinateur. De ce fa
 
 -   Gestion des comptes sur votre ordinateur
 
-Il n'est pas rare d'avoir un ordinateur qui soit utilisé par plusieurs personnes. Afin que chaque utilisateur puisse avoir un espace personnel dédié, vous allez devoir créer plusieurs comptes. Vous retrouvez la procédure [sous Windows](https://support.microsoft.com/fr-fr/windows/ajouter-ou-supprimer-des-comptes-sur-votre-pc-104dc19f-6430-4b49-6a2b-e4dbd1dcdf32) et [sous MacOS](https://support.apple.com/fr-be/guide/mac-help/mtusr001/mac). Chaque type de compte ne se vaut pas. Le compte administrateur est le compte qui a le plus de droits sur un ordinateur. Il faut par exemple avoir les droits d'un compte administrateur pour pouvoir installer la plupart des logiciels. **Si plusieurs étudiants utilisent un même ordinateur, vous devez obligatoirement créer des comptes séparés, sans quoi l'activité des différents utilisateurs sera capturée de manière erronée dans la base de données liée au cours et votre progression ne sera pas notée correctement !**
+Il n'est pas rare d'avoir un ordinateur qui soit utilisé par plusieurs personnes. Afin que chaque utilisateur puisse avoir un espace personnel dédié, vous allez devoir créer plusieurs comptes. Vous retrouvez la procédure pour [Windows](https://support.microsoft.com/fr-fr/windows/ajouter-ou-supprimer-des-comptes-sur-votre-pc-104dc19f-6430-4b49-6a2b-e4dbd1dcdf32) et pour [MacOS](https://support.apple.com/fr-be/guide/mac-help/mtusr001/mac). Chaque type de compte ne se vaut pas. Le compte administrateur est le compte qui a le plus de droits sur un ordinateur. Il faut par exemple avoir les droits d'un compte administrateur pour pouvoir installer la plupart des logiciels. **Si plusieurs étudiants utilisent un même ordinateur, vous devez obligatoirement créer des comptes séparés, sans quoi l'activité des différents utilisateurs ne pourra pas être discriminée et votre progression ne sera pas enregistrée correctement !**
 
 -   Organisation des fichiers sur un ordinateur
 
@@ -36,11 +36,11 @@ Lorsque vous travaillez sur un ordinateur, vous interagissez avec un certain nom
 
 -   Raccourcis clavier
 
-Les raccourcis clavier vous permettent d'optimiser votre productivité. Prenez un peu de temps pour vérifier que vous en connaissez les principaux via ces pages : [sous Windows](https://www.lecotentin.fr/raccourcis-clavier), [sous MacOS](https://www.journaldunet.com/solutions/dsi/1194040-raccourci-clavier-mac/) ou encore [sous Linux Ubuntu](https://www.clubic.com/tutoriels/article-862426-1-raccourcis-clavier-ubuntu-indispensables.html). **Les raccourcis clavier ne sont pas indispensables, mais ils vous feront gagner du temps lors des exercices, cela peut être très utile lorsque le temps est limité.**
+Les raccourcis clavier vous permettent d'optimiser votre productivité. Prenez un peu de temps pour vérifier que vous en connaissez les principaux via ces pages : dans [Windows](https://www.lecotentin.fr/raccourcis-clavier), dans [MacOS](https://www.journaldunet.com/solutions/dsi/1194040-raccourci-clavier-mac/) ou encore dans [Linux Ubuntu](https://www.clubic.com/tutoriels/article-862426-1-raccourcis-clavier-ubuntu-indispensables.html). **Les raccourcis clavier ne sont pas indispensables, mais ils vous feront gagner du temps lors des exercices, cela peut être très utile lorsque le temps est limité.**
 
 -   Captures d'écran
 
-Lorsque vous rencontrez un problème avec votre ordinateur ou un de ses logiciels, une capture d'écran bien réalisée permet souvent d'illustrer utilement votre question sur un forum et peut remplacer une longue explication textuelle. Vous pouvez retrouver des tutoriels pour réaliser une capture d'écran [sous Windows](https://www.commentcamarche.net/informatique/windows/149-faire-des-captures-d-ecran-avec-windows-10/) ou [sous Mac](https://www.commentcamarche.net/informatique/macos/737-faire-des-captures-d-ecran-sur-mac/). Le plus important est de cibler la zone à capturer. Il est donc bien souvent inutile de sélectionner tout le bureau de l'ordinateur, voire toute la fenêtre de l'application. **Durant les cours de science des données, vous serez amené à poser des questions et à illustrer vos propos à l'aide de copies d'écran. Vous êtes supposé capable de le faire. Les photos d'écran prises à l'aide d'un smartphone ne sont pas acceptables, car elles sont toujours bien moins lisibles que la copie directe de l'écran avec les outils ad hoc.**
+Lorsque vous rencontrez un problème avec votre ordinateur ou un de ses logiciels, une capture d'écran bien réalisée permet souvent d'illustrer utilement votre question sur un forum et peut remplacer une longue explication textuelle. Vous pouvez retrouver des tutoriels pour réaliser une capture d'écran dans [Windows](https://www.commentcamarche.net/informatique/windows/149-faire-des-captures-d-ecran-avec-windows-10/) ou dans [MacOS](https://www.commentcamarche.net/informatique/macos/737-faire-des-captures-d-ecran-sur-mac/). Le plus important est de cibler la zone à capturer. Il est donc bien souvent inutile de sélectionner tout le bureau de l'ordinateur, voire toute la fenêtre de l'application. **Dans les cours de science des données, vous serez amené à poser des questions et à illustrer vos propos à l'aide de copies d'écran. Vous êtes supposé capable de le faire. Les photos d'écran prises à l'aide d'un smartphone ne sont pas acceptables, car elles sont toujours bien moins lisibles que la copie directe de l'écran avec les outils ad hoc.**
 
 ##### À vous de jouer ! {.unnumbered}
 
@@ -50,7 +50,7 @@ Lorsque vous rencontrez un problème avec votre ordinateur ou un de ses logiciel
 
 -   Navigateurs Web
 
-Un [navigateur Web](https://www.1min30.com/dictionnaire-du-web/navigateur-web-browser) est un logiciel qui permet d'accéder au Web. Le Web n'est pas un synonyme d'Internet comme vous pouvez le lire dans la formation [comprendre le Web](https://openclassrooms.com/fr/courses/1946386-comprendre-le-web/6874966-distinguez-le-web-et-internet) d'[Open Classroom](https://openclassrooms.com/fr/). Les navigateurs Web principaux sont Google Chrome, Microsoft Edge, Mozilla Firefox ou encore Safari sous MacOS. **Pour ce cours en ligne, vous allez devoir naviguer sur le Web et utiliser divers outils comme RStudio Server qui sont accessibles depuis une page Web. Par conséquent, vous devez être capable d'utiliser un navigateur Web pour afficher des pages, effectuer une recherche, créer une liste de "bookmarks", etc. Chaque navigateur Web a ses particularités et les pages que vous utiliserez ne fonctionnent pas forcément toutes avec ces différents navigateurs. Nous ne pouvons pas les tester avec toutes les options possibles (type de navigateur, version et système Windows, MacOS ou Linux, cela fait énormément de combinaisons possibles). Par conséquent, nous sommes obligés de restreindre la liste des navigateurs Web utilisables pour le cours à la version la plus récente de Google Chrome (tous systèmes) ou Edge (sous Windows), ou Safari (sous MacOS) ou Chromium (sous Linux). Les autres (Firefox, Opera, Brave, Vivaldi, Internet Explorer, etc.) ne sont pas autorisés, car non testés, ou incompatibles. Firefox en particulier, ne fonctionne pas avec différentes pages du cours, de GitHub ou autres.**
+Un [navigateur Web](https://www.1min30.com/dictionnaire-du-web/navigateur-web-browser) est un logiciel qui permet d'accéder au Web. Le Web n'est pas un synonyme d'Internet comme vous pouvez le lire dans la formation [comprendre le Web](https://openclassrooms.com/fr/courses/1946386-comprendre-le-web/6874966-distinguez-le-web-et-internet) d'[Open Classroom](https://openclassrooms.com/fr/). Les navigateurs Web principaux sont Google Chrome, Microsoft Edge, Mozilla Firefox ou encore Safari sous MacOS. **Pour ce cours en ligne, vous allez devoir naviguer sur le Web et utiliser divers outils comme RStudio Server qui sont accessibles depuis une page Web. Par conséquent, vous devez être capable d'utiliser un navigateur Web pour afficher des pages, effectuer une recherche, créer une liste de "bookmarks", etc. Chaque navigateur Web a ses particularités et les pages que vous utiliserez ne fonctionnent pas forcément toutes avec ces différents navigateurs. Nous ne pouvons pas les tester avec toutes les options possibles (type de navigateur, version et système Windows, MacOS ou Linux, cela fait énormément de combinaisons possibles). Par conséquent, nous sommes obligés de restreindre la liste des navigateurs Web utilisables pour le cours à la version la plus récente de Google Chrome (tous systèmes) ou Edge (Windows), ou Safari (MacOS) ou Chromium (Linux). Les autres (Firefox, Opera, Brave, Vivaldi, Internet Explorer, etc.) sont à éviter, car non testés ou incompatibles. Firefox en particulier, ne fonctionne pas avec différentes pages du cours, et de GitHub ou autres.**
 
 Le préambule de ce cours vous a également permis d'en apprendre davantage sur le matériel pédagogique, l'approche pédagogique ou encore la méthode d'évaluation. Vérifiez votre compréhension des notions vues avec l'exercice suivant.
 
@@ -107,7 +107,7 @@ La science des données requiert d'employer des outils performants que nous avon
 
 ### GitHub
 
-Pour bien débuter ce cours, vous avez été guidé pour créer un compte sur [GitHub](https://github.com). Il est temps de définir ce premier outil. GitHub est un réseau social permettant de sauvegarder vos projets sur le "cloud", les partager et collaborer avec d'autres personnes. Les utilisateurs peuvent se regrouper sous une organisation afin de faciliter la collaboration. Ce réseau social a la particularité d'être centré sur les projets et utilise un gestionnaire de version de projet nommé [Git](https://git-scm.com/) (nous aborderons Git plus loin dans ce module). Ce nom provient de l'association "Git", le gestionnaire de version et "Hub" relatif au réseau.
+Pour bien débuter ce cours, vous avez été guidé pour créer un compte sur [GitHub](https://github.com). Il est temps de définir ce premier outil. GitHub est un réseau social permettant de sauvegarder vos projets sur le "Cloud", les partager et collaborer avec d'autres personnes. Les utilisateurs peuvent se regrouper sous une organisation afin de faciliter la collaboration. Ce réseau social a la particularité d'être centré sur les projets et utilise un gestionnaire de version de projet nommé [Git](https://git-scm.com/) (nous aborderons Git plus loin dans ce module). Ce nom provient de l'association "Git", le gestionnaire de version et "Hub" relatif au réseau.
 
 Découvrons un projet qui s'intéresse à la manipulation de tableau de données (filtrer des lignes spécifiques, calculer de nouvelles colonnes, trier le tableau en fonction d'une colonne spécifique...). Nous utiliserons ce projet dans ce cours. Le projet [dplyr](https://github.com/tidyverse/dplyr) est partagé par l'organisation [tidyverse](https://github.com/tidyverse). Ce projet va nous permettre d'explorer quelques éléments de GitHub. Nous nous attardons uniquement sur certains éléments clés.
 
@@ -315,11 +315,11 @@ Ceci n'est qu'une explication très succincte. Vous trouverez plus de détails d
 
 Dans ce cours, nous utilisons différents logiciels qui nécessitent une installation et une configuration en plusieurs étapes. Afin de vous économiser ces étapes fastidieuses, nous employons un système complètement préconfiguré : la **SciViews Box** pour laquelle une nouvelle version est préparée avant chaque nouvelle année académique. Il s'agit d'une **machine virtuelle**, un ordinateur complet, mais dématérialisé en quelque sorte. Nous utilisons l'une de ces deux formes :
 
--   un système fonctionnant sur le cloud et nommé [**SaturnCloud**](https://saturncloud.io),
+-   un système fonctionnant sur le Cloud et nommé [**SaturnCloud**](https://saturncloud.io),
 
 -   un système local installé sur votre ordinateur et utilisant [**Docker**](https://www.docker.com) ou [**Pacman**](https://archlinux.org/pacman/).
 
-SaturnCloud ne nécessite pas un ordinateur puissant pour fonctionner, mais il faut une bonne connexion Internet. Il faut aussi que le serveur distant soit disponible et offre les ressources suffisantes pour travailler. *Cette année, nous l'utiliserons pour la première fois... c'est un peu expérimental, en somme.* La version locale avec Docker ou Pacman ne sera utilisée que si nous rencontrons des problèmes avec SaturnCloud. Elle nécessite, en effet, un ordinateur plus puissant et beaucoup plus de place sur le disque pour l'installer.
+SaturnCloud ne nécessite pas un ordinateur puissant pour fonctionner, mais il faut une bonne connexion Internet. Il faut aussi que le serveur distant soit disponible et offre les ressources suffisantes pour travailler. La version locale avec Docker ou Pacman ne sera utilisée que si nous rencontrons des problèmes avec SaturnCloud. Elle nécessite, en effet, un ordinateur plus puissant et beaucoup plus de place sur le disque pour l'installer.
 
 ### RStudio
 
@@ -371,13 +371,12 @@ Nous avons donc la structure suivante :
   mon_projet.Rproj   # Fichier de configuration du projet créé par RStudio
 ```
 
-On retrouve trois dossiers principaux dans un projet en science des données. Il y a le dossier `data`, le dossier `docs` et le dossier `R`.
+On retrouve deux dossiers principaux dans un projet en science des données. Il y a le dossier `data`, et le dossier `R`.
 
 ```         
 /mon_projet          # Le répertoire de base du projet
   .gitignore         # Fichier relatif à la gestion de version
   data               # Le dossier qui contient les données
-  docs               # Le dossier avec les documents de type rapport, présentation, ...
   mon_projet.Rproj   # Fichier de configuration du projet créé par RStudio
   R                  # Le dossier où sont rassemblés les scripts R
 ```
@@ -386,13 +385,13 @@ On retrouve trois dossiers principaux dans un projet en science des données. Il
 
 `r h5p(144, height = 270, toc = "Organisation d'un projet RStudio")`
 
-Des explications plus détaillées sur les projets dans RStudio et la façon de les créer et de les gérer se trouvent dans l'annexe \@ref(rs-projet). Il est temps de passer maintenant à un **tutoriel learnr** pour autoévaluer plus en profondeur votre compréhension de la matière.
+Des explications plus détaillées sur les projets dans RStudio et la façon de les créer et de les gérer se trouvent dans l'annexe \@ref(rs-projet). Il est temps de passer maintenant à un **tutoriel learnr** pour auto-évaluer plus en profondeur votre compréhension de la matière.
 
 `r learnr("A01La_tools", title = "Vos outils logiciels", toc = "Autoévaluation sur les outils logiciels")`
 
 ## Premier projet {#premier-projet}
 
-Il est temps de passer à la pratique. Démarrez votre SciViews box et affichez la fenêtre de RStudio maintenant (si vous ne l'avez pas encore installée, cliquez sur le bouton bleu **RStudio** en haut à droite de cette page pour voir les explications d'installation). RStudio permet de cloner directement un projet disponible sur GitHub en quelques étapes comme vous pouvez le voir ci-dessous.
+Passons maintenant à la pratique. Démarrez votre SciViews box et affichez la fenêtre de RStudio maintenant (si vous ne l'avez pas encore installée, cliquez sur le bouton bleu **RStudio** en haut à droite de cette page pour voir les explications d'installation). RStudio permet de cloner directement un projet disponible sur GitHub en quelques étapes comme vous pouvez le voir ci-dessous.
 
 `r img("sdd1_01/clone.gif")`
 

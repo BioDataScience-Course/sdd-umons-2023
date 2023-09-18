@@ -92,7 +92,7 @@ Le dossier `workspace` (Saturn Cloud) ou `projects` (SciViews Box en local) cont
 
 Vous devez maintenant structurer votre projet afin d'avoir différents sous-dossiers pour organiser au mieux le travail. Ceci concerne à la fois les données et les rapports d'analyse en lien avec ce projet.
 
-Cliquez sur le bouton `New Folder` dans la barre d'outils de l'onglet **`Files`** et appelez ce nouveau dossier `data`. Ajoutez également les dossiers `analysis` et `R`.
+Cliquez sur le bouton `New Folder` dans la barre d'outils de l'onglet **`Files`** et appelez ce nouveau dossier `data`. Ajoutez également le dossier `R`.
 
 ```         
 /home
@@ -100,7 +100,6 @@ Cliquez sur le bouton `New Folder` dans la barre d'outils de l'onglet **`Files`*
     /shared
       /projects
         /project_test           # Le répertoire de base du projet
-           analysis             # Le dossier qui comprend toutes les analyses (rapport, présentation,...)
            data                 # Le dossier qui comprend toutes les données
            project_test.Rproj  # Fichier de configuration du projet créé par RStudio
            .gitignore           # Fichier relatif à la gestion de version
@@ -235,9 +234,9 @@ Un script R doit être organisé de manière cohérente afin d'être exécutable
 
 Notez que les instructions exécutées dans le script sont envoyées dans la fenêtre `Console` en bas à gauche et que le résultat de leur exécution est affiché directement en dessous dans la même fenêtre.
 
-### R Markdown/R Notebook {#Rmd}
+### Quarto/R Markdown/R Notebook {#Rmd}
 
-Un document R Markdown est un fichier dont l'extension est `.Rmd`. Il combine à la fois des instructions R (pour les analyses) et le langage Markdown (pour le formatage de texte). Le R Markdown ne vous permet pas de visualiser directement le résultat final d'un rapport d'analyse[^a2-utilisation-git-3]
+Un document Quarto est un fichier dont l'extension est `.qmd`. Un document R Markdown a, quant à lui, une extension `.Rmd`. Ces deux formats sont très similaires.  Ils combinent à la fois des instructions R (pour les analyses) et le langage Markdown (pour le formatage de texte), ce que l'on appelle le "R Markdwon". Le R Markdown ne vous permet pas de visualiser directement le résultat final d'un rapport d'analyse[^a2-utilisation-git-3]
 
 [^a2-utilisation-git-3]: Les systèmes d'édition professionnels dissocient en effet le fond de la forme : vous rédiger d'abord le contenu, et ensuite, vous indiquer le style à lui appliquer.
 
@@ -245,7 +244,7 @@ Un document R Markdown est un fichier dont l'extension est `.Rmd`. Il combine à
 
 Tout comme dans un script R, les instructions doivent être également exécutées lors de la réalisation du rapport. Une forme spéciale de document R Markdown est le **R Notebook**. Ce dernier est un peu un intermédiaire entre un script R et un R Markdown. Il se présente de manière très similaire à ce dernier, mais vous pouvez également exécuter le code qu'il contient ligne par ligne comme dans un script R.
 
-Un document R Markdown / R Notebook se structure de la manière suivante :
+Un document Quarto / R Markdown / R Notebook se structure de la manière suivante :
 
 -   Un préambule, encore appelé entête YAML (du nom du langage utilisé pour y encoder des informations)
 -   Des zones d'édition (le langage employé est le Markdown)
@@ -255,7 +254,7 @@ Un document R Markdown / R Notebook se structure de la manière suivante :
 
 Le **préambule** est nécessairement situé au tout début du document et est délimité à l'aide de trois tirets `---` sans rien d'autre sur une ligne au début et à la fin. Le préambule comporte un ensemble d'entrées de type `nom: valeur` qui configurent le document ou la façon dont il sera compilé en rapport final. Nous pouvons y indiquer le titre principal, le ou les auteurs, la date ...
 
-Le reste du document R Markdown est subdivisé en zones successives et contrastées sur des fonds de couleurs différentes qui alternent zones d'éditions et chunks. Ces chunks seront interprétés pour réaliser un calcul, un graphique, un tableau, etc. Le résultat de ce traitement sera placé à cet endroit dans le rapport final. La présentation diffère profondément selon que le document est édité en mode "source" ou en mode "visuel". On passe d'un mode à l'autre grâce aux deux boutons `Source` et `Visual` entre la barre d'outils supérieure et le document.
+Le reste du document Quarto / R Markdown est subdivisé en zones successives et contrastées sur des fonds de couleurs différentes qui alternent zones d'éditions et chunks. Ces chunks seront interprétés pour réaliser un calcul, un graphique, un tableau, etc. Le résultat de ce traitement sera placé à cet endroit dans le rapport final. La présentation diffère profondément selon que le document est édité en mode "source" ou en mode "visuel". On passe d'un mode à l'autre grâce aux deux boutons `Source` et `Visual` entre la barre d'outils supérieure et le document.
 
 ![](images/annexe_a2/markdown_source_visual.png)
 
@@ -267,15 +266,15 @@ Toujours en mode source, les chunks sont balisés en entrée par trois apostroph
 
 Structurez le contenu narratif de votre document Markdown à l'aide de titres de niveaux appropriés. Vous pouvez utiliser jusqu'à six niveaux de titres préfixés à l'aide d'un à six dièses et d'une espace. Utilisez donc un titre de niveau un pour le titre **Introduction** et des titres de niveau deux pour les sous-parties de votre introduction, et ainsi de suite.
 
-#### Création d'un R Markdown/Notebook
+#### Création d'un Quarto/R Markdown/Notebook
 
-Vous avez à votre disposition deux méthodes pour créer un nouveau R Notebook dans RStudio et l'ouvrir pour édition. Voyez l'animation ci-dessous.
+Vous avez à votre disposition deux méthodes pour créer un nouveau document Quarto/R Markdown/R Notebook dans RStudio et l'ouvrir pour édition. Voyez l'animation ci-dessous.
 
 `r img("annexe_a2/rmd2.gif")`
 
-#### Utilisation d'un R Markdown/Notebook
+#### Utilisation d'un Quarto/R Markdown/Notebook
 
-**Afin de visualiser les résultats des chunks dans votre rapport final, vous devez veiller à exécuter chaque chunks dans l'ordre dans un R Notebook**. Ceci n'est pas nécessaire dans un R Markdown, mais dans ce cas, tous les chunks sont systématiquement recompilés à chaque génération de rapport, ce qui peut être pénible si les calculs sont longs.
+**Afin de visualiser les résultats des chunks dans votre rapport final, vous devez veiller à exécuter chaque chunks dans l'ordre dans un R Notebook**. Ceci n'est pas nécessaire dans un Quarto ou un R Markdown, mais dans ce cas, tous les chunks sont systématiquement recompilés à chaque génération de rapport, ce qui peut être pénible si les calculs sont longs.
 
 Pour exécuter un chunk, vous pouvez :
 
@@ -295,7 +294,7 @@ Le bouton `Run` propose plusieurs actions intéressantes :
 
 ![](images/annexe_a2/rmd4.png)
 
-Après la phase d'édition du texte et des instructions dans les chunks, vous pouvez visualiser votre rapport final en cliquant sur le bouton `Preview` (Notebook) ou `Knit` (Markdown). Dans le cas du Notebook, vous devrez obligatoirement avoir exécuté les chunks auparavant. Pour le Markdown, ce n'est pas nécessaire puisque leur exécution fait partie intrinsèque de la compilation du document final.
+Après la phase d'édition du texte et des instructions dans les chunks, vous pouvez visualiser votre rapport final en cliquant sur le bouton `Preview` (Notebook), `Knit` (Markdown) ou `Render` (Quarto). Dans le cas du Notebook, vous devrez obligatoirement avoir exécuté les chunks auparavant. Pour le Quarto ou le R Markdown, ce n'est pas nécessaire puisque leur exécution fait partie intrinsèque de la compilation du document final.
 
 ![](images/annexe_a2/rmd5.png)
 
@@ -331,7 +330,7 @@ Dans notre exemple, nous pouvons observer 983 contributions sur l'année écoul�
 
 ### Vos projets
 
-GitHub vous sert à héberger vos projets (qui se nomment des `repositories`). Notre exemple se base sur le projet [sdd-umons-2023](https://github.com/BioDataScience-Course/sdd-umons-2023), que vous pouvez librement consulter et qui contient les sources du présent ouvrage en ligne. Il s'agit en effet d'un dépôt public. Vous avez la possibilité d'avoir des projets publics ou privés.
+GitHub vous sert à héberger vos projets (qui se nomment des *repositories* en anglais). Notre exemple se base sur le projet [sdd-umons-2023](https://github.com/BioDataScience-Course/sdd-umons-2023), que vous pouvez librement consulter et qui contient les sources du présent ouvrage en ligne. Il s'agit en effet d'un dépôt public. Vous avez la possibilité d'avoir des projets publics ou privés.
 
 Les projets publics sont visibles par tous. La collaboration est la pierre angulaire de GitHub. Donc, tout le monde peut y apporter des modifications dans des copies de vos dépôts et puis vous les proposer d'une manière qui vous permet d'examiner les améliorations suggérées, de les discuter, et enfin de les incorporer ou de le rejeter. Cela s'appelle un **Pull request**, mais nous y reviendrons plus tard. Pour des projets plus sensibles, vous avez la possibilité d'avoir des projets privés.
 
@@ -370,6 +369,8 @@ Concernant vos projets dans le cadre du cours, ces informations sont employées 
 Dans le cours de Science des Données vous utiliserez RStudio pour éditer vos documents et travailler avec R. Mais d'autre part, vous partagerez vos œuvres via GitHub. C'est d'ailleurs un schéma classique que nous vous conseillons d'adopter aussi en dehors du cours ! Les professionnels travaillent tous comme cela. Nous devons donc trouver un moyen de permettre à RStudio de communiquer avec GitHub. Les fonctionnalités existent, dans l'onglet **Git** (qui n'apparait que si vous êtes dans un projet géré par git). Encore faut-il indiquer à GitHub que vous autoriser votre RStudio à accéder à votre compte et à vos dépôts. Pour cela, deux solution très différentes existent : le code d'accès personnel **PAT**, un code généré par GitHub et que vous incluez dans votre SciViews Box, ou la **clé SSH**, une clé privée/publique générée au contraire dans votre logiciel et dont vous renseignez la partie publique à GitHub pour qu'il puisse l'utiliser. Nous allons voir ces deux méthodes successivement, sachant que la version locale de la SciViews Box utilise le PAT, alors que c'est plus facile d'utiliser la clé SSH dans Saturn Cloud.
 
 #### Personal Access Token {#github-pat}
+
+**Note : dans Saturn Cloud, une autre technique basée sur la clé SSH est utilisée. Dans ce cas, voyez la section suivante.**
 
 L'authentification dans GitHub peut se faire via un *Personal Access Token* (PAT). Il s'agit d'une sorte de mot de passe long et compliqué (donc bien sécurisé) que GitHub génère pour vous et que vous devez renseigner à tout logiciel souhaitant accéder à votre compte. Ce système d'authentification ne doit être réalisé qu'une seule fois dans RStudio. La procédure est la suivante.
 
@@ -467,7 +468,7 @@ Nous pouvons adjoindre à notre projet une licence. Il en existe plusieurs qui d
 
 ### Cloner un dépôt existant via RStudio {#github-clone}
 
-Lorsque nous souhaitons travailler sur un de nos projets hébergé dans un dépôt GitHub, il faut commencer par le cloner pour avoir une copie en local de ce dernier. Notez que "local" signifie ici dans la machine sur laquelle nous travaillons. Si nous utilisons une ressource sur Saturn Cloud ou tout autre service sur le cloud comme RStudio Cloud, par exemple, le contenu du dépôt sera recopié dans la machine sur le cloud. Ce contenu sera donc "local" de manière relative au logiciel qui s'y exécute.
+Lorsque nous souhaitons travailler sur un de nos projets hébergé dans un dépôt GitHub, il faut commencer par le cloner pour avoir une copie en local de ce dernier. Notez que "local" signifie ici dans la machine sur laquelle nous travaillons. Si nous utilisons une ressource sur Saturn Cloud ou tout autre service dans le Cloud comme RStudio Cloud, par exemple, le contenu du dépôt sera recopié dans la machine dans le Cloud. Ce contenu sera donc "local" de manière relative au logiciel qui s'y exécute.
 
 `r img("annexe_a2/github9.gif")`
 

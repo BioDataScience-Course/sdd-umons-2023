@@ -148,12 +148,12 @@ Chaque type d'exercice est associé à un outil présenté dans le matériel pé
 
 ![](images/sdd1_00/apprendre2.png)
 
-L'ensemble de vos réponses sont collectées et utilisées afin de construire la note finale. Il n'est donc plus nécessaire de passer un examen classique en session d'examen. Tous ces exercices prouvent que vous avez acquis ou non les acquis d'apprentissage de ce cours. Cependant, vous aurez des **interrogrations** classiques régulières sur la matière vue jusque là.
+Toutes vos réponses sont collectées et utilisées afin de construire la note finale. Il n'est donc plus nécessaire de passer un examen classique en session d'examen. Tous ces exercices prouvent que vous avez acquis ou non les acquis d'apprentissage de ce cours. Cependant, vous aurez des **interrogrations** classiques régulières sur la matière vue jusque là.
 
 Votre progression au sein des exercices de chaque module est mise à votre disposition à la fin de chaque module ou bien depuis Moodle.
 
 ```{block, type='warning'}
-Les notes des exercices plus faciles de niveau 1, 2 et 3 sont comptabilisés séparément des exercices plus difficiles de niveau 4 et des interrogations, avec une pondération également en faveur de ces derniers. **Votre objectif est donc de bien vous préparer et de réussir vos projets de niveau 4, challenges et interrogations en présentiel.** Les exercices faciles vous aident à bien vous préparer. **Faites les sérieusement, c'est dans votre intérêt.**
+Les notes des exercices plus faciles de niveau 1, 2 et 3 sont comptabilisées séparément des exercices plus difficiles de niveau 4, des challenges et des interrogations, avec une pondération également en faveur de ces derniers. **Votre objectif est donc de bien vous préparer et de réussir vos projets de niveau 4, challenges et interrogations en présentiel.** Les exercices faciles vous aident à bien vous préparer. **Faites-les sérieusement, c'est dans votre intérêt.**
 
 L'évaluation est **continue** tout au long de l'année. Il n'y a pas d'examen en fin d'année et il n'y a pas moyen non plus de repasser un examen en seconde session. La présence aux séances est **obligatoire** pour cette raison et toute absence injustifiée vous coûtera un zéro pour la matière concernée.
 ```
@@ -162,7 +162,7 @@ L'évaluation est **continue** tout au long de l'année. Il n'y a pas d'examen e
 
 Le plan du cours est une forme de contrat entre les étudiants et les encadrants. Ce document structure les attentes de vos encadrants. Veuillez consulter ce document attentivement.
 
--   [Plan du cours de Science des données biologiques I : années 2023-2024](https://github.com/BioDataScience-Course/BioDataScience-Common/tree/2023-2024/docs/plan_de_cours/sdd1_plan_cours_2023-2024.md)
+-   [Plan du cours de Science des données biologiques I : années 2023-2024](https://github.com/BioDataScience-Course/BioDataScience-Common/tree/2023-2024/docs/plan_de_cours/sdd1_plan_cours_2023-2024.pdf)
 
 ##### À vous de jouer ! {.unnumbered}
 
@@ -201,6 +201,8 @@ Une fois que vous avez rejoint l'équipe **`r !"A{YY}"`**, il n'est plus nécess
 
 ![](images/sdd1_00/issues.png)
 
+Vous pouvez aussi directement créer une issue depuis RStudio. Voyez le fichier README.md dans le dépôt des issues pour les explications.
+
 *Pour terminer, encore un petit exercice rapide pour vérifier si vous avez lu suffisamment attentivement le contenu ci-dessus...*
 
 `r h5p(134, height = 270, toc = "Adresse mail pour l'aide sur le cours")`
@@ -208,7 +210,7 @@ Une fois que vous avez rejoint l'équipe **`r !"A{YY}"`**, il n'est plus nécess
 ## Planning des séances {#temps .unnumbered}
 
 | Module            | Préparation pour le ... | Fin N1-3         | Projet N4                  | Challenge            | Interrogation        |
-|-------------------|-------------------------|------------------|----------------------------|----------------------|----------------------|
+|------------|------------|------------|------------|------------|------------|
 | **Quadri 1**      |                         |                  |                            |                      |                      |
 | *(install party)* | `r !"{W[2]+1}"`         |                  |                            |                      |                      |
 | 1 Intro.          | `r !"{W[3]+1}"`         | `r !"{W[4]+1}"`  |                            |                      |                      |
