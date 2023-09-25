@@ -192,13 +192,13 @@ if (exists("assignment2"))
     course.ids = c(
       'S-BIOG-006' = !"A01Ga_{YY}M_biology_challenge"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/..."),
+      'S-BIOG-006' = "https://classroom.github.com/a/qjqBdB5p"),
     course.starts = c(
       'S-BIOG-006' = !"{W[3]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[3]+5} 13:00:00"),
+      'S-BIOG-006' = !"{W[3]+5} 15:45:00"),
     term = "Q1", level = 2, n = 100,
-    toc = "Es-tu un as de la biologie ?",
+    toc = "Es-tu un as de la biologie (issues)?",
     clone = FALSE)
 ```
 
@@ -408,13 +408,13 @@ if (exists("assignment"))
     course.ids = c(
       'S-BIOG-006' = !"A01Ia_{YY}M_covid19"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/..."),
+      'S-BIOG-006' = "https://classroom.github.com/a/5l0vI2UV"),
     course.starts = c(
       'S-BIOG-006' = !"{W[3]+5} 08:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[3]+5} 13:00:00"),
+      'S-BIOG-006' = !"{W[4]+1} 23:59:59"),
     term = "Q1", level = 3,
-    toc = "Premier projet en science des données")
+    toc = "Premier projet en science des données (covid19)")
 ```
 
 Si vous souhaitez plus d'information sur Github Classroom, vous pouvez vous référer à l'Appendice \@ref(github-classroom).
