@@ -445,7 +445,7 @@ if (exists("assignment2"))
     course.ends = c(
       'S-BIOG-006' = !"{W[15]+5} 23:59:59"),
     term = "Q1", level = 4, n = 2,
-    toc = "Biométrie de l'oursin violet, part I")
+    toc = "Biométrie de l'oursin violet, partie I")
 ```
 
 ## Récapitulatif des exercices

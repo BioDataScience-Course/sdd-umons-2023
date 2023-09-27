@@ -10,43 +10,43 @@ SciViews::R
 
 -   Être capable de réaliser différentes variantes d'un graphique en nuage de points dans R avec la fonction `chart()`
 
--   Découvrir le format R Markdown [@R-rmarkdown] et la recherche reproductible
+-   Découvrir le format Quarto/R Markdown [@R-rmarkdown] et la recherche reproductible
 
 -   Intégrer ensuite des graphiques dans un rapport et y décrire ce que vous observez
 
 ##### Prérequis {.unnumbered}
 
-Le premier module de ce cours vous a permis de découvrir de nouveaux outils comme GitHub, Git, ou encore RStudio. Ces outils vont être employés tout au long de votre formation en science des données (et donc de ce cours). Il est indispensable de les maîtriser.
+Le premier module de ce cours vous a permis de découvrir de nouveaux outils logiciels comme GitHub, Git, Markdown ou encore RStudio. Ces outils vont être employés tout au long de votre formation en science des données (et donc de ce cours). Il est indispensable de les maîtriser.
 
 ##### À vous de jouer ! {.unnumbered}
 
 `r h5p(139, height = 270, toc = NULL)`
 
-Ce second module va s'intéresser à la réalisation de graphiques en nuage de points. Il est important de maîtriser les [éléments de base de la géométrie](https://mathix.org/cours_interactif/index.php?l=fr&n=3e&c=Rep%C3%A9rage) : origine, abscisse, ordonnée, coordonnées d'un point sur un plan...
+Ce second module va se focaliser sur la réalisation de graphiques en nuage de points. Il est important de maîtriser les [éléments de base de la géométrie](https://mathix.org/cours_interactif/index.php?l=fr&n=3e&c=Rep%C3%A9rage) : origine, abscisse, ordonnée, coordonnées d'un point dans un plan...
 
 ##### À vous de jouer ! {.unnumbered}
 
-Le graphique ci-dessous présente la variation de la hauteur du test en fonction de la masse d'oursins (n'hésitez à faire des petites recherches par vous-même, si vous ne connaissez pas ce qu'est le test d'un oursin).
+Le graphique ci-dessous présente la variation de la hauteur du test en fonction de la masse d'oursins (n'hésitez à faire des petites recherches par vous-même, si vous ne savez pas ce qu'est le "test" d'un oursin).
 
 `r h5p(154, height = 270, toc = NULL)`
 
-Ce second module va également vous faire utiliser des fonctions mathématiques. Vous devez maîtriser les éléments suivants : [les puissances](https://fr.khanacademy.org/math/algebra-basics/alg-basics-expressions-with-exponents), [les logarithmes, dont le logarithme népérien et les exponentielles](https://fr.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions).
+Ce second module va également vous faire utiliser des fonctions mathématiques. Vous devez maîtriser les notions suivantes : [les puissances](https://fr.khanacademy.org/math/algebra-basics/alg-basics-expressions-with-exponents), [les logarithmes, dont le logarithme népérien et les exponentielles](https://fr.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions).
 
 ## R, les éléments de base
 
-Dans le module précédent, vous avez pu découvrir que le logiciel **R** allait être un outil central dans cette formation en science des données. Par exemple, vous avez édité votre premier document R Markdown qui est la combinaison du R et du Markdown. Nous avons volontairement laissé ce logiciel pour ce second module.
+Dans le module précédent, vous avez pu découvrir que le logiciel **R** allait être un outil central dans cette formation en science des données. Par exemple, vous avez édité votre premier document Quarto qui combine R (pour les calculs, les graphiques et les tables) avec du Markdown (pour le formatage du texte). Nous allons maintenant nous initier aux rudiments de l'utilisation de R.
 
 ![](images/sdd1_02/Rlogo.png)
 
-[R](https://www.r-project.org/about.html) est un logiciel **open source** spécialisé dans l'analyse de données. Le langage de programmation R qu'il implémente est mature et développé depuis 1993. Il prend ses sources dans le langage S (spécialement conçu pour les statistiques dans les années 1970). R permet, entre autres, la manipulation et la visualisation de données, ainsi que l'application de calculs statistiques. C'est l'un des systèmes les plus utilisés et les plus puissants pour l'analyse des données. Donc, étudier R sera un **investissement clé** pour votre future carrière de biologiste, car des données, vous en aurez tous à analyser plus tard dans votre travail !
+[R](https://www.r-project.org/about.html) est un logiciel **open source** (c'est-à-dire que son code source est disponible ; un logiciel est constitué de la **compilation** d'un code source qui peut être rendu public comme ici, ou non) spécialisé dans l'analyse de données. Le langage de programmation R qu'il implémente est mature et développé depuis 1993. Il prend ses sources dans le langage S (spécialement conçu pour les statistiques dans les années 1970). R permet, entre autres, la manipulation et la visualisation de données, ainsi que les calculs statistiques. C'est l'un des logiciels les plus utilisés et les plus puissants pour l'analyse des données, avec Python, Julia et Matlab. Donc, étudier R sera un **investissement clé** pour votre future carrière de biologiste, car des données, vous en aurez tous à en analyser !
 
 ##### À vous de jouer ! {.unnumbered}
 
-Dans le premier module, vous avez réalisé un premier tutoriel qui contenait uniquement des questions à choix multiples. Ces tutoriels servent aussi à vous entraîner à écrire des instructions en R. Avant de vous lancer dans ces exercices, consultez l'Appendice \@ref(learnr) pour apprendre à utiliser correctement les tutoriels "learnrs".
+Dans le premier module, vous avez réalisé un premier tutoriel qui contenait principalement des questions à choix multiples. Ces tutoriels servent aussi à vous entraîner à écrire des instructions en R. Avant de vous lancer dans ces exercices, consultez l'Appendice \@ref(learnr) pour apprendre à utiliser correctement ces tutoriels learnrs pour les questions relatives à du code R.
 
 `r learnr("A02La_base", title = "Les bases de R", toc = "Notions de base de R")`
 
-Vous venez de découvrir les assignations, les fonctions, le chaînage d'instructions... Lancez-vous à présent dans une première une analyse concrète.
+Vous venez de découvrir les assignations, les fonctions, le chaînage d'instructions... Lancez-vous à présent dans une première analyse concrète de données biologiques.
 
 `r learnr("A02Lb_progression", title = "Progression R", toc = "Progression en R")`
 
@@ -65,11 +65,10 @@ $$y \sim x$$
 que l'on peut lire "y en fonction de x". Pour les deux variables numériques *x* et *y*, la représentation graphique la plus classique est le **nuage de points** (voir Fig. \@ref(fig:first-scatterplot) pour un exemple).
 
 ```{r first-scatterplot, echo=FALSE, results='hide', message=FALSE, fig.cap="Exemple de graphique en nuage de points. Des éléments essentiels sont ici mis en évidence en couleurs (voir texte). \\label{np_intro}"}
-urchin <- read("urchin_bio", package = "data.io", lang = "fr")
-chart(data = urchin, height ~  weight) + 
-  geom_point() +
-  labs(x = "Label de l'axe x  + [Unité]", 
-       y = "Label de l'axe y + [Unité]") +
+chart(data = data.frame(x = rnorm(50), y = rnorm(50)), x ~  y) + 
+  geom_point(col = "gray50") +
+  labs(x = "Label de l'axe x [unité]", 
+       y = "Label de l'axe y [unité]") +
   theme(axis.text.x  = element_text(colour = "#a80039", size = 15), 
         axis.title.x = element_text(colour = "#029687", size = 15), 
         axis.text.y  = element_text(colour = "#a80039", size = 15), 
@@ -83,25 +82,29 @@ Les éléments indispensables à la compréhension d'un graphique en nuage de po
 
 -   Les axes avec les graduations (en rouge),
 -   Les labels et les unités des axes (en bleu).
+-   Les points représentant les différentes observations (en gris).
 
-Les instructions dans R pour produire un tel nuage de points sont :
+Les instructions dans R pour produire un tel nuage de points sont les suivantes :
+
+-   Préparation de l'environnement, importation et visualisation des données sous forme de tableau synthétique pour commencer.
 
 ```{r, warning=FALSE, message=FALSE}
 # Chargement de SciViews::R
 SciViews::R
 # Importation du jeu de données
 urchin <- read("urchin_bio", package = "data.io", lang = "fr")
-# Visualisation interactive du tableau de données
-DT::datatable(urchin)
+# Visualisation des premières et dernières lignes du jeu de données
+tabularise$headtail(urchin, auto.labs = FALSE)
 ```
 
+-   Réalisation du graphique en nuage de points proprement dit.
+
 ```{r, fig.cap="Taille (hauteur du test) d'oursins en fonction de leur masse."}
-# Réalisation du graphique 
 chart(data = urchin, height ~ weight) +
   geom_point()
 ```
 
-La fonction `chart()` n'est pas accessible dans R de base, mais l'extension chargée via l'instruction `SciViews::R` rend cette fonction disponible. Elle requiert comme argument le jeu de donnée (`data = urchin`, c'est un objet qui s'appelle un **"data frame"** dans le langage de R), ainsi que la formule à employer dans laquelle vous avez indiqué le nom des variables que vous voulez sur l'axe des ordonnées à gauche et des abscisses à droite de la formule, les deux membres étant séparés par un "tilde" (`~`). Vous voyez que le jeu de données contient beaucoup de variables (les titres des colonnes du tableau en sortie). Parmi toutes ces variables, nous avons choisi ici de représenter `height` en fonction de `weight`, la hauteur en fonction de la masse des oursins. Jusqu'ici, nous avons spécifié *ce que* nous voulons représenter, mais pas encore *comment* (sous quelle apparence), nous voulons les matérialiser sur le graphique. Pour un nuage de points, nous voulons les représenter sous forme de ... points ! Donc, nous devons ajouter la fonction `geom_point()` pour indiquer cela.
+La fonction `chart()` n'est pas accessible dans R de base, mais l'extension chargée via l'instruction `SciViews::R` rend cette fonction disponible. Elle requiert comme argument le jeu de donnée (`data = urchin`, c'est un objet qui s'appelle un **"data frame"** dans le langage de R), ainsi que la formule à employer dans laquelle vous avez indiqué le nom des variables que vous voulez sur l'axe des ordonnées à gauche et des abscisses à droite de la formule, les deux parties étant séparées par un "tilde" (`~`). Vous voyez que le jeu de données contient beaucoup de variables (les titres des colonnes du tableau en sortie). Parmi toutes ces variables, nous avons choisi ici de représenter `height` en fonction de `weight`, la hauteur en fonction de la masse des oursins. Jusqu'ici, nous avons spécifié *ce que* nous voulons représenter, mais pas encore *comment* (sous quelle apparence), nous voulons les matérialiser sur le graphique. Pour un nuage de points, nous voulons les représenter sous forme de ... points ! Donc, nous devons ajouter la fonction `geom_point()` pour indiquer cela.
 
 ##### À vous de jouer ! {.unnumbered}
 
@@ -113,7 +116,7 @@ La fonction `chart()` n'est pas accessible dans R de base, mais l'extension char
 #vembedr::embed_youtube("-QzG3Xr202w", width = 770, height = 433)
 ```
 
-*Autoévaluer maintenant vos acquis avec le tutoriel learnr suivant.*
+*Autoévaluez maintenant vos acquis avec le tutoriel learnr suivant.*
 
 `r learnr("A02Lc_scatterplot", title = "Nuage de points", toc = "Graphiques en nuages de points")`
 
@@ -123,11 +126,11 @@ La fonction `chart()` n'est pas accessible dans R de base, mais l'extension char
 
 Vous devez être particulièrement vigilant lors de la réalisation d'un graphique en nuage de point sur l'étendue des valeurs présentées sur vos axes. Vous devez utiliser votre expertise de biologiste pour vous poser les deux questions suivantes :
 
--   Est-ce que l'axe représente des valeurs plausibles de hauteurs et de masses de ces oursins appartenant à l'espèce *Paracentrotus lividus* ?
+-   Est-ce que l'axe représente des valeurs plausibles de hauteurs et de masses de ces oursins (sachant que l'espèce est *Paracentrotus lividus* vous pouvez faire une recherche pour vérifier les tailles et masses de ces animaux) ?
 
--   Quelle est la précision des mesures effectuées ?
+-   Quelle est la précision des mesures ?
 
-Dans certains cas, la forme du nuage de points peut être distendue par la présence de valeurs aberrantes. Ce n'est pas le cas ici, mais nous pouvons le simuler en distendant artificiellement soit l'axe X, soit l'axe Y, soit les deux :
+Par défaut, `chart()` va calculer l'étendue des axes en tenant compte de la plus petite et de la plus grande valeur observée. Dans certains cas, lorsqu'une ou plusieurs observations s'éloignent très fort du nuage de points (par exemple, une valeur mal encodée avec un zéro de trop à la fin du nombre), le graphique va compresser le nuage de points à cause de la présence de ces valeurs aberrantes. Ce n'est pas le cas ici, mais nous pouvons le simuler en distendant artificiellement soit l'axe X, soit l'axe Y, soit les deux :
 
 ```{r, echo=FALSE, fig.cap="Piège du nuage de points. A) Graphique initial montrant la variation de la hauteur [mm] en fonction de la masse [g]. B) Graphique A avec la modification de l'échelle de l'axe X. C) Graphique A avec une seconde modification de l'axe X. D) Graphique A avec modification simultanée des deux axes."}
 a <- chart(data = urchin, height ~  weight) + 
@@ -142,17 +145,19 @@ d <- a + scale_x_continuous(limits = c(-400, 400)) +
 combine_charts(list(a, b, c, d))
 ```
 
+Vous voyez que l'effet peut éventuellement être assez catastrophique. Faites donc bien attention à la façon dont les points se répartissent et remplissent ou non le graphique pour éviter de tomber dans ce piège !
+
 ##### À vous de jouer ! {.unnumbered}
 
-*Note : l'exercice suivant est une **application Shiny**. Il s'agit d'un petit programme écrit en R et qui vise à expérimenter un concept de manière interactive. Vous pouvez lancer cet exercice directement dans cette page. Vérifiez d'être bien enregistré (message à l'ouverture de l'app) et n'oubliez pas de cliquer sur le bouton `Submit` pour tester votre choix, mais également sur le bouton `Save & Quit` pour valider définitivement votre réponse pour la prendre en compte dans votre rapport de progression.*
+*Note : l'exercice suivant est une **application Shiny**. Il s'agit d'un petit programme écrit en R et qui vise à expérimenter un concept de manière interactive. Vous pouvez lancer cet exercice directement dans cette page. Vérifiez d'être bien enregistré (message à l'ouverture de l'application) et n'oubliez pas de cliquer sur le bouton `Submit` pour tester votre choix, mais également sur le bouton `Save & Quit` pour valider définitivement votre réponse pour la prendre en compte dans votre rapport de progression.*
 
 `r launch_shiny("https://sdd.umons.ac.be/A02Sa_limits/", height = 500, delay = 10, toc = "Étendue des axes d'un graphique")`
 
 ### Transformation des données
 
-Vous avez la possibilité d'appliquer une transformation à vos données (il est même conseillé de le faire) afin qu'elles soient plus facilement analysables. Par exemple, il est possible d'utiliser des fonctions de puissance, racines, logarithmes, exponentielles[^02-visualisation-i-2] pour modifier l'apparence du nuage de points dans le but de le rendre plus linéaire (car il est plus facile d'analyser statistiquement des données qui s'alignent le long d'une droite).
+Vous avez la possibilité d'appliquer une transformation à vos données (il est même conseillé de le faire) pour qu'elles soient plus facilement analysables ensuite. Par exemple, il est possible d'utiliser des fonctions de puissance, racines, logarithmes, exponentielles[^02-visualisation-i-2] pour modifier l'apparence du nuage de points dans le but de le rendre plus linéaire. Il est, en effet, plus facile d'analyser statistiquement des données qui s'alignent le long d'une droite.
 
-[^02-visualisation-i-2]: Pour les proportions (`prop`) ou les pourcentages (`perc`) (valeurs bornées entre 0 et 1 ou 0 et 100%) la transformation arc-sinus est souvent utilisée : $prop′ = \arcsin \sqrt{prop}$ ou $perc′ = \arcsin \sqrt{perc / 100}$.
+[^02-visualisation-i-2]: Pour les proportions (`prop`) ou les pourcentages (`perc`) (valeurs bornées entre 0 et 1 ou 0 et 100%) la transformation arc-sinus est souvent utilisée dans la littérature $prop′ = \arcsin \sqrt{prop}$ ou $perc′ = \arcsin \sqrt{perc / 100}$. Son usage est cependant soumis à la critique et tous les statisticiens ne sont pas d'accord au sujet de cette transformation.
 
 ##### À vous de jouer ! {.unnumbered}
 
@@ -167,31 +172,54 @@ chart(data = DF, YNUM ~ XNUM) +
   geom_point()
 ```
 
-Vous avez à votre disposition un ensemble de snippets que vous pouvez retrouver dans l'aide-mémoire consacré à [**SciViews**](https://github.com/BioDataScience-Course/sdd_cheatsheets/raw/master/SciViews/sciviews.pdf). Vous avez également à votre disposition l'aide-mémoire sur la visualisation des données ([**Data Visualization Cheat Sheet**](https://www.rstudio.com/resources/cheatsheets/)) qui utilise la fonction `ggplot()` plutôt que `chart()` et une interface légèrement différente pour spécifier les variables à utiliser pour réaliser le graphique (`aes(x = ..., y = ...)`).
+Vous avez à votre disposition un ensemble de snippets que vous pouvez retrouver dans l'aide-mémoire consacré à [**SciViews**](https://github.com/BioDataScience-Course/sdd_cheatsheets/raw/master/SciViews/sciviews.pdf). Vous avez également à votre disposition l'aide-mémoire sur la visualisation des données ([**Data Visualization Cheat Sheet**](https://rstudio.github.io/cheatsheets/html/data-visualization.html)) qui utilise la fonction `ggplot()` plutôt que `chart()` et une interface légèrement différente pour spécifier les variables à utiliser pour réaliser le graphique (`aes(x = ..., y = ...)`).
 
 Prêtez une attention toute particulière à l'organisation d'un script R. En plus des instructions R, il contient aussi sous forme de commentaires, un titre, la date de la dernière mise à jour, le nom de l'auteur, et des sections qui organisent de façon claire le contenu du script. À ce sujet, vous trouverez des explications détaillées concernant l'utilisation des scripts R dans l'annexe \@ref(script).
 
+##### À vous de jouer ! {.unnumbered}
+
+La première partie du projet suivant vous permettra de faire des graphiques en nuage de points en utilisant un script R.
+
+```{r assign_A02Ia_scatterplot_I, echo=FALSE, results='asis'}
+if (exists("assignment"))
+  assignment("A02Ia_scatterplot", part = "I",
+    url = "https://github.com/BioDataScience-Course/A02Ia_scatterplot",
+    course.ids = c(
+      'S-BIOG-006' = !"A02Ia_{YY}M_scatterplot"),
+    course.urls = c(
+      'S-BIOG-006' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-006' = !"{W[5]+1} 13:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[6]+5} 23:59:59"),
+    term = "Q1", level = 3,
+    toc = "Graphiques avec `urchin_bio` (partie I)")
+```
+
+
 ##### Pour en savoir plus {.unnumbered}
 
--   [Visualisation des données dans R for Data Science](http://r4ds.had.co.nz/data-visualisation.html). Chapitre du livre portant sur la visualisation des données, en anglais.
+-   [Visualisation des données dans R for Data Science, 2e edition](https://r4ds.hadley.nz/data-visualize.html). Chapitre du livre portant sur la visualisation des données, en anglais.
 
--   [ggplot2 nuage de point](http://www.sthda.com/french/wiki/ggplot2-nuage-de-points-guide-de-d-marrage-rapide-logiciel-r-et-visualisation-de-donn-es#nuage-de-points-simples). Tutoriel en français portant sur l'utilisation d'un nuage de points avec le package {ggplot2} et la fonction `geom_point()`.
+<!-- Plus accessible? -   [ggplot2 nuage de point](http://www.sthda.com/french/wiki/ggplot2-nuage-de-points-guide-de-d-marrage-rapide-logiciel-r-et-visualisation-de-donn-es#nuage-de-points-simples). Tutoriel en français portant sur l'utilisation d'un nuage de points avec le package {ggplot2} et la fonction `geom_point()`. -->
 
 -   [Fundamentals of Data Visualization](http://serialmentor.com/dataviz/). Un livre en anglais sur les fondamentaux de la visualisation graphique.
 
 -   [R Graphics Cookbook - Chapter 5: Scatter Plots](https://r-graphics.org/chapter-scatter). Un chapitre d'un livre en anglais sur l'utilisation du nuage de points.
 
--   [geom_point()](http://ggplot2.tidyverse.org/reference/geom_point.html). La fiche technique de la fonction (en anglais).
+-   [geom_point()](http://ggplot2.tidyverse.org/reference/geom_point.html). La fiche technique de la fonction `geom_point()` (en anglais).
 
-## Graphiques dans R Markdown
+## Graphiques dans Quarto/R Markdown
 
-Un fichier R Markdown est un fichier avec une extension `.Rmd`. Il permet de combiner le langage Markdown que vous avez déjà abordé au premier module avec du code R, tel que celui utilisé dans la première partie de ce module 2.
+Un fichier [Quarto](https://quarto.org) a une extension `.qmd`[^02-visualisation-i-3]. Un fichier R Markdown est caractérisé par l'extension `.Rmd`. Ces deux formats sont très similaires, Quarto étant la version plus récente de R Markdown. Tous deux sont développés et maintenus par la même société (Posit). À partir d'ici, nous indiquerons Quarto/R Markdown lorsque la phrase s'applique indifféremment aux deux formats. Donc, Quarto/R Markdown permet de combiner le langage Markdown que vous avez déjà abordé au premier module avec du code R, tel que celui utilisé dans la première partie de ce module 2, voire du code dans d'autres langages comme Python, Julia, SQL\... Ces zones contenant du code exécutable en R ou autre s'appellent des **chunks**, ou **morceaux** dans l'interface RStudio en français (mais nous utiliserons préférentiellement le terme anglais dans cet ouvrage).
+
+[^02-visualisation-i-3]: L'**extension d'un fichier** est un indicateur de son format à la fin de son nom, sous forme d'un point (.) suivi d'un sigle. Par exemple `.txt` caractérise un fichier texte, alors que `.png` indique qu'il s'agit d'une image au format PNG. Attention que les extensions sont parfois cachées (c'est systématique dans l'explorateur de fichiers de Windows avec la configuration par défaut, et c'est selon le fichier dans le Finder de MacOS. Sous Linux, et donc dans votre machine Saturn CLoud, l'extension est *toujours* affichée heureusement.
 
 `r img("annexe_a2/rmd.gif")`
 
 ##### À vous de jouer ! {.unnumbered}
 
-*La vidéo ci-dessous vous montre ce qu'est R Markdown, un format hybride entre Markdown et R bien pratique pour inclure vos graphiques directement dans un rapport. Elle vous montre aussi comment transformer un script R en document R Markdown (ou R Notebook, qui en est une variante). Elle contient des questions "H5P" également.*
+*La vidéo ci-dessous vous montre ce qu'est R Markdown, un format hybride entre Markdown et R bien pratique pour inclure vos graphiques directement dans un rapport. Elle vous montre aussi comment transformer un script R en document R Markdown (ou Quarto, le principe est le même). Elle contient des questions "H5P" également.*
 
 `r h5p(158, height = 270, toc = "Vidéo de présentation de R Markdown")`
 
@@ -199,42 +227,64 @@ Un fichier R Markdown est un fichier avec une extension `.Rmd`. Il permet de com
 #vembedr::embed_youtube("NDuHBMh690I", width = 770, height = 433)
 ```
 
-Les balises spéciales R Markdown à retenir sont les suivantes :
+Les balises spéciales Quarto/R Markdown à retenir sont les suivantes :
 
--   en entrée de chunk R : ```` ```{r} ```` seul sur une ligne. Il est aussi possible de rajouter un nom, par exemple, ```` ```{r graphique1} ```` et/ou des options, par exemple, ```` ```{r, echo=FALSE, results='hide'} ```` pour cacher et le code et le résultat dans le rapport),
+-   en entrée de chunk R : ```` ```{r} ```` seul sur une ligne. Il est aussi possible de rajouter un label, par exemple, ```` ```{r graphique1} ```` et/ou des options, par exemple, ```` ```{r, echo=FALSE, results='hide'} ```` pour cacher et le code et le résultat dans le rapport),
 -   en sortie de chunk R : ```` ``` ```` seul sur une ligne.
 
-Vous devez bien entendu avoir autant de balises d'entrée que de balises de sortie. Des explications plus détaillées se trouvent dans l'annexe \@ref(Rmd) dédiée au R Markdown. De plus, l'écriture d'un rapport d'analyse scientifique doit respecter certaines conventions. Vous trouverez des explications à ce sujet dans l'annexe \@ref(redaction-scientifique).
+En mode éditeur visuel, les trois apostrophes inverses ```` ``` ```` en début et fin de chunk sont cachées. Mais tant en mode visuel qu'en mode source, le fond du texte est représenté dans une couleur différente pour les chunks et pour le texte Markdown, afin de bien les différencier.
+
+Vous devez bien entendu avoir autant de balises d'entrée que de balises de sortie. Des explications plus détaillées se trouvent dans l'annexe \@ref(Rmd) dédiée au R Markdown. De plus, l'écriture d'un texte scientifique doit respecter certaines conventions. Vous trouverez des explications à ce sujet dans l'annexe \@ref(redaction-scientifique).
 
 ```{block, type='note'}
-Vous ne devez bien évidemment pas commencer avec un script R. Vous pouvez commencer d'emblée avec un R Markdown et écrire vos instructions R directement dedans. Il vous est toujours possible d'exécuter ces instructions ligne après ligne dans la fenêtre **Console** pour les tester tout comme à partir d'un script R.
+Vous ne devez bien évidemment pas commencer votre analyse avec un script R. Vous pouvez commencer d'emblée avec un Quarto/R Markdown et écrire vos instructions R directement dans des chunks. Il vous est toujours possible d'exécuter ces instructions ligne après ligne dans la fenêtre **Console** pour les tester tout comme à partir d'un script R.
 ```
 
 ##### À vous de jouer ! {.unnumbered}
 
+Vous allez maintenant manipuler un document **Quarto** pour réaliser des graphiques en nuage de points.
+
+```{r assign_A02Ia_scatterplot_II, echo=FALSE, results='asis'}
+if (exists("assignment"))
+  assignment("A02Ia_scatterplot", part = "II",
+    url = "https://github.com/BioDataScience-Course/A02Ia_scatterplot",
+    course.ids = c(
+      'S-BIOG-006' = !"A02Ia_{YY}M_scatterplot"),
+    course.urls = c(
+      'S-BIOG-006' = "https://classroom.github.com/a/..."),
+    course.starts = c(
+      'S-BIOG-006' = !"{W[5]+1} 13:00:00"),
+    course.ends = c(
+      'S-BIOG-006' = !"{W[6]+5} 23:59:59"),
+    term = "Q1", level = 3,
+    toc = "Graphiques avec `urchin_bio` (partie II)")
+```
+
 *Note : le travail ci-dessous est un **projet GitHub Classroom** par groupe. Vos enseignants vont définir les groupes, ainsi que la personne responsable de la mise en place d'une équipe (team) GitHub Classroom. Ensuite, vous accepterez le projet en entrant dans l'équipe qui vous a été désignée, à l'exclusion de toute autre en cliquant sur le lien. Enfin, clonez le dépôt dans votre machine virtuelle et vous aurez un nouveau projet RStudio* \@ref(rs-projet) *dans lequel vous pourrez travailler. Les instructions sont indiquées dans le fichier `README.md` à la racine de ce projet.*
 
-Vous allez vous exercer à l'interprétation de graphiques en nuage de points sur base d'instructions pré-rédigées dans des chunks.
+Vous allez vous exercer à la création et à l'interprétation de graphiques en nuage de points dans ce projet.
 
-```{r assign_A02Ga_describe_charts, echo=FALSE, results='asis'}
+```{r assign_A02Ga_analysis, echo=FALSE, results='asis'}
 if (exists("assignment2"))
-  assignment2("A02Ga_describe_charts", part = NULL,
-    url = "https://github.com/BioDataScience-Course/A02Ga_describe_charts",
+  assignment2("A02Ga_analysis", part = "I",
+    url = "https://github.com/BioDataScience-Course/A02Ga_analysis",
     course.ids = c(
-      'S-BIOG-006' = !"A02Ga_{YY}M_describe_charts"),
+      'S-BIOG-006' = !"A02Ga_{YY}M_analysis"),
     course.urls = c(
       'S-BIOG-006' = "https://classroom.github.com/a/..."),
     course.starts = c(
       'S-BIOG-006' = !"{W[5]+5} 08:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[5]+5} 10:00:00"),
-    term = "Q1", level = 3, n = 8,
-    toc = "Interprétation de graphiques en nuage de points")
+      'S-BIOG-006' = !"{W[15]+2} 23:59:59"),
+    term = "Q1", level = 4, n = 4,
+    toc = "Analyse de données (partie I)")
 ```
 
 ##### Pour en savoir plus {.unnumbered}
 
-Au gré de vos recherches sur Internet, vous tomberez peut-être sur [Quarto](https://quarto.org). Il s'agit de la nouvelle génération de documents de type R Markdown, mais avec d'autres possibilités intéressantes (notamment d'être compatible avec [Jupyter(lab)](https://jupyter.org), un autre logiciel d'édition de documents scientifiques). En pratique, la syntaxe de Quarto est très proche de celle de R Markdown. Donc, si vous connaissez l'un, vous serez capable d'utiliser l'autre. Sinon, vous pouvez aussi consulter les liens suivants :
+Pour plus d'informations sur Quarto/R Markdown, vous pouvez consulter les liens suivants :
+
+-   [Quarto](https://quarto.org) le site contenant tout ce qu'il faut savoir sur Quarto (en anglais).
 
 -   [Communicating results with R Markdown](https://rviews.rstudio.com/2018/11/01/r-markdown-a-better-approach/) explique la même chose que dans la vidéo, avec plus de détails et des liens vers d'autres documents utiles (en anglais).
 
@@ -244,39 +294,19 @@ Au gré de vos recherches sur Internet, vous tomberez peut-être sur [Quarto](ht
 
 -   [R Markdown: the definitive guide](https://bookdown.org/yihui/rmarkdown/) est **le** manuel par excellence pour R Markdown (en anglais uniquement, malheureusement).
 
--   Aide-mémoire R Markdown, dans les menus de RStudio : `Help -> Cheatsheets -> R Markdown Cheat Sheet`
+-   Aide-mémoire R Markdown, dans les menus de RStudio : `Aide -> Cheat Sheets -> Aide-mémoire R Markdown`
 
--   Référence rapide à Markdown, dans les menus RStudio : `Help -> Markdown Quick Reference`
+-   Référence rapide à Markdown, dans les menus RStudio : `Aide -> Référence rapide Markdown`
 
 -   [Introduction à R Markdown](https://rstudio-pubs-static.s3.amazonaws.com/32239_0956f02cef24443abd9525551368ef12.html#6). Présentation en français par Agrocampus Ouest, Rennes.
 
 -   [Le langage R Markdown](https://www.fun-mooc.fr/c4x/UPSUD/42001S02/asset/RMarkdown.pdf). Introduction en français concise, mais relativement complète.
 
--   [Why I love R Notebooks](https://rviews.rstudio.com/2017/03/15/why-i-love-r-notebooks/) explique (en anglais) pourquoi le format R Notebook est particulièrement bien adapté à la science des données.
-
-##### À vous de jouer ! {.unnumbered}
-
--   Vous allez maintenant manipuler un document **R Markdown** pour construire par vous-mêmes de manière interactive une analyse en même temps que le rapport associé.
-
-```{r assign_A02Ia_scatterplot, echo=FALSE, results='asis'}
-if (exists("assignment"))
-  assignment("A02Ia_scatterplot",
-    url = "https://github.com/BioDataScience-Course/A02Ia_scatterplot",
-    course.ids = c(
-      'S-BIOG-006' = !"A02Ia_{YY}M_scatterplot"),
-    course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/..."),
-    course.starts = c(
-      'S-BIOG-006' = !"{W[5]+5} 10:00:00"),
-    course.ends = c(
-      'S-BIOG-006' = !"{W[5]+5} 13:00:00"),
-    term = "Q1", level = 3,
-    toc = "Graphiques avec `urchin_bio`")
-```
+-   [Why I love R Notebooks](https://rviews.rstudio.com/2017/03/15/why-i-love-r-notebooks/) explique (en anglais) pourquoi le format R Notebook, une variante du R Markdown, est particulièrement bien adapté à la science des données.
 
 ## Récapitulatif des exercices
 
-Ce second module vous a permis de réaliser vos premiers graphiques pour visualiser des données et vous a introduit à R Markdown, un système qui allie la facilité de Markdown pour l'écriture de documents textuels et la puissance de calcul de R pour y inclure des analyses directement. Pour évaluer votre compréhension de cette matière, vous aviez les exercices suivants à réaliser :
+Ce second module vous a permis de réaliser vos premiers graphiques pour visualiser des données et vous a introduit à Quarto/R Markdown, un système qui allie la facilité de Markdown pour l'écriture de documents textuels et la puissance de calcul de R pour y inclure des analyses directement. Pour évaluer votre compréhension de cette matière, vous aviez les exercices suivants à réaliser :
 
 `r show_ex_toc()`
 
