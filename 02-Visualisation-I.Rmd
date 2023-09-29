@@ -161,7 +161,7 @@ Vous avez la possibilité d'appliquer une transformation à vos données (il est
 
 ##### À vous de jouer ! {.unnumbered}
 
-`r launch_shiny("https://sdd.umons.ac.be/A02Sa_transformation/", height = 500, delay = 10, toc = "Transformation des axes d'un graphique")`
+`r launch_shiny("https://sdd.umons.ac.be/A02Sb_transformation/", height = 500, delay = 10, toc = "Transformation des axes d'un graphique")`
 
 ##### Pièges et astuces {.unnumbered}
 
