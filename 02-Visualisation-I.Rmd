@@ -191,7 +191,7 @@ if (exists("assignment"))
     course.starts = c(
       'S-BIOG-006' = !"{W[5]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[6]+5} 23:59:59"),
+      'S-BIOG-006' = !"{W[6]+1} 23:59:59"),
     term = "Q1", level = 3,
     toc = "Graphiques avec `urchin_bio` (partie I)")
 ```
@@ -255,7 +255,7 @@ if (exists("assignment"))
     course.starts = c(
       'S-BIOG-006' = !"{W[5]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[6]+5} 23:59:59"),
+      'S-BIOG-006' = !"{W[6]+1} 23:59:59"),
     term = "Q1", level = 3,
     toc = "Graphiques avec `urchin_bio` (partie II)")
 ```
