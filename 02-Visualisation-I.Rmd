@@ -264,14 +264,14 @@ if (exists("assignment"))
 
 Vous allez vous exercer à la création et à l'interprétation de graphiques en nuage de points dans ce projet.
 
-```{r assign_A02Ga_analysis, echo=FALSE, results='asis'}
+```{r assign_A02Ga_analysis_I, echo=FALSE, results='asis'}
 if (exists("assignment2"))
   assignment2("A02Ga_analysis", part = "I",
     url = "https://github.com/BioDataScience-Course/A02Ga_analysis",
     course.ids = c(
       'S-BIOG-006' = !"A02Ga_{YY}M_analysis"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/..."),
+      'S-BIOG-006' = "https://classroom.github.com/a/L0JZAlcP"),
     course.starts = c(
       'S-BIOG-006' = !"{W[5]+5} 08:00:00"),
     course.ends = c(
