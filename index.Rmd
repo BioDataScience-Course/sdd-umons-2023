@@ -210,13 +210,13 @@ Vous pouvez aussi directement créer une issue depuis RStudio. Voyez le fichier 
 ## Planning des séances {#temps .unnumbered}
 
 | Module            | Préparation pour le ... | Fin N1-3         | Projet N4                  | Challenge            | Interrogation        |
-|-------------------|-------------------------|------------------|----------------------------|----------------------|----------------------|
+|------------|------------|------------|------------|------------|------------|
 | **Quadri 1**      |                         |                  |                            |                      |                      |
 | *(install party)* | `r !"{W[2]+1}"`         |                  |                            |                      |                      |
 | 1 Intro.          | `r !"{W[3]+1}"`         | `r !"{W[4]+1}"`  |                            |                      |                      |
 | 2 Visu. I         | `r !"{W[5]+1}"`         | `r !"{W[6]+1}"`  | **début `r !"{W[5]+5}"`**  |                      |                      |
 | *(remédiation)*   | `r !"{W[6]+1}"`         |                  |                            |                      |                      |
-| 3 Visu. II        | `r !"{W[8]+1}"`         | `r !"{W[9]+1}"`  |                            |                      | **`r !"{W[8]+5}"`**  |
+| 3 Visu. II        | `r !"{W[8]+1}"`         | `r !"{W[9]+1}"`  | **continue...**            |                      | **`r !"{W[8]+5}"`**  |
 | 4 Visu. III       | `r !"{W[10]+1}"`        | `r !"{W[11]+1}"` | **continue...**            | **`r !"{W[10]+5}"`** |                      |
 | 5 Trait. I        | `r !"{W[12]+1}"`        | `r !"{W[13]+1}"` | **continue...**            |                      |                      |
 | 6 Trait. II       | `r !"{W[14]+1}"`        | `r !"{W[15]+1}"` | **fin `r !"{W[15]+2}"`**   |                      | **`r !"{W[14]+5}"`** |
