@@ -723,7 +723,7 @@ if (exists("assignment"))
 
 -   [Seconde possibilité pour des figures composées à l'aide de `ggpubr::ggarrange()`](http://www.sthda.com/english/rpkgs/ggpubr/reference/ggarrange.html). `combine_charts()` fait la même chose, mais avec des valeurs par défaut légèrement différentes (`labels = "auto"` par défaut pour ce dernier, mais `labels = NULL` pour `ggpubr::ggarrange()`).
 
--   [Site du package {patchwork}](https://patchwork.data-imaginist.com). Une façon puissante et intuitive de réaliser des graphiques compisites dans R.
+-   [Site du package {patchwork}](https://patchwork.data-imaginist.com). Une façon puissante et intuitive de réaliser des graphiques composites dans R.
 
 <!--
 
@@ -828,7 +828,7 @@ b <- ggplot(data = urchin, mapping = aes(x = weight, y = height)) +
 combine_charts(list(a, b))
 ```
 
-Enfin, pour ceux qui n'aiment pas la notation utilisant le `+` (car elle fait trop penser à une addition, ce qu'elle ne fait pas ici), vous pouvez aussi utiliser la fonction `Sgg()` du package {chart}. Cette fonction transforme toutes les commandes {ggplot2} / {chart} qui doivent être combinées à l'aide de `+` en commandes pouvant être combinées à l'aide de l'opérateur de pipe de R de base `|>`. Ce dernier opérateur est typiquement utilisé pour composer une instruction complexe à l'aide de plusieurs instructions simples (les blocs de construction). Il est donc plus logique ici. De l'aveu même de son auteur, {ggplot2} aurait utilisé `|>` à la place de `+` si cet opérateur existait à l'époque où ggplot a été conçu. Donc, `Sgg()` vient en quelque sorte corriger le tir. Pour utiliser `Sgg()`, vous remplacez le `+` par `|>`, et vous débutez le nom de votre fonction {ggplot2} par `Sgg$` (seule exception: `ggtitle()` ne devient pas `Sgg$ggtitle()`, ùais `Sgg$title()`). C'est tout. Donc, vous écrirez :
+Enfin, pour ceux qui n'aiment pas la notation utilisant le `+` (car elle fait trop penser à une addition, ce qu'elle ne fait pas ici), vous pouvez aussi utiliser la fonction `Sgg()` du package {chart}. Cette fonction transforme toutes les commandes {ggplot2} / {chart} qui doivent être combinées à l'aide de `+` en commandes pouvant être combinées à l'aide de l'opérateur de pipe de R de base `|>`. Ce dernier opérateur est typiquement utilisé pour composer une instruction complexe à l'aide de plusieurs instructions simples (les blocs de construction). Il est donc plus logique ici. De l'aveu même de son auteur, {ggplot2} aurait utilisé `|>` à la place de `+` si cet opérateur existait à l'époque où ggplot a été conçu. Donc, `Sgg()` vient en quelque sorte corriger le tir. Pour utiliser `Sgg()`, vous remplacez le `+` par `|>`, et vous débutez le nom de votre fonction {ggplot2} par `Sgg$` (seule exception: `ggtitle()` ne devient pas `Sgg$ggtitle()`, mais `Sgg$title()`). C'est tout. Donc, vous écrirez :
 
 ```{r chart-ggplot2-gg, fig.cap= "Graphique réalisé en utilisant `gg$`."}
 chart(data = urchin, height ~ weight) |>
