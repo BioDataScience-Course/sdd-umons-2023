@@ -485,11 +485,11 @@ if (exists("assignment2"))
     course.ids = c(
       'S-BIOG-006' = !"A05Ga_{YY}M_biometry"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/..."),
+      'S-BIOG-006' = "https://classroom.github.com/a/MpqUix6k"),
     course.starts = c(
-      'S-BIOG-006' = !"{W[14]+1} 13:00:00"),
+      'S-BIOG-006' = !"{W[12]+5} 08:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[15]+3} 23:59:59"),
+      'S-BIOG-006' = !"{W[15]+2} 23:59:59"),
     term = "Q1", level = 4, n = 4,
     toc = "Collecte de données relative à l'obésité")
 ```
@@ -782,11 +782,11 @@ if (exists("assignment"))
     course.ids = c(
       'S-BIOG-006' = !"A06Ia_{YY}M_belgium_demo"),
     course.urls = c(
-      'S-BIOG-006' = "https://classroom.github.com/a/..."),
+      'S-BIOG-006' = "https://classroom.github.com/a/2j5KvEZK"),
     course.starts = c(
       'S-BIOG-006' = !"{W[14]+1} 13:00:00"),
     course.ends = c(
-      'S-BIOG-006' = !"{W[14]+1} 16:00:00"),
+      'S-BIOG-006' = !"{W[15]+1} 23:59:59"),
     term = "Q1", level = 3,
     toc = "Démographie en Belgique")
 ```
