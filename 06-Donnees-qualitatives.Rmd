@@ -12,7 +12,7 @@ SciViews::R(lang = "fr")
 
 -   Acquérir des données et les encoder correctement et de manière à ce que les analyses soient reproductibles
 
--   Être capable de remanier des tableaux de données de long en large ou inversément et de fusionner plusieurs tableaux
+-   Être capable de remanier des tableaux de données de long en large ou inversement et de fusionner plusieurs tableaux
 
 ##### Prérequis {.unnumbered}
 
@@ -150,7 +150,7 @@ rep(c("a", "b", "c"), 5L)
 rep(c("a", "b", "c"), each = 5L)
 ```
 
-Pour de plus gros tableaux, il vaut mieux utiliser un tableur tel qu'Excel ou LibreOffice Calc pour l'encodage. Les tableurs en ligne comme Google Sheets ou Excel Online conviennent très bien également et facilitent un travail collaboratif ainsi que la mise à disposition sur Internet, comme nous avons vu au module \@ref(import). **Évitez les formules dans vos tableaux, encodez à partir de la cellule A1 en haut à gauche avec la première ligne qui contient le nom des colonnes. Soyez aussi attentif à ce qu'Excel ne modifie pas de manière inadéquate vos entrées**. Par exemple, Excel a tendance à essayer d'interpréter certaines entrées comme des dates et les modifient automatiquement sans demander votre avis !
+Pour de plus gros tableaux, il vaut mieux utiliser un tableur tel qu'Excel ou LibreOffice Calc pour l'encodage. Les tableurs en ligne comme Google Sheets ou Excel Online conviennent très bien également et facilitent un travail collaboratif ainsi que la mise à disposition sur Internet, comme nous avons vu au module \@ref(import). **Évitez les formules dans vos tableaux, encodez à partir de la cellule A1 en haut à gauche avec la première ligne qui contient le nom des colonnes. Soyez aussi attentif à ce qu'Excel ne modifie pas de manière inadéquate vos entrées**. Par exemple, Excel a tendance à essayer d'interpréter certaines entrées comme des dates et les modifie automatiquement sans demander votre avis !
 
 ### Tableau de contingence
 
@@ -262,7 +262,7 @@ Exemple de métadonnées :
 -   Nom de l'opérateur en charge de la mesure
 -   ...
 
-Vous avez pu vous apercevoir que la fonction `read()` permet d'ajouter certaines métadonnées comme les unités aux variables d'un jeu de données. Cependant, il n'est pas toujours possible de rajouter les métadonnées dans un tableau sous forme électronique, mais il faut toujours les consigner dans un **cahier de laboratoire**, et ensuite les **retranscrire dans le rapport**. La fonction `labelise()` vous permet de rajouter le **label** et les **unités** de mesure pour vos différentes variables directement dans le tableau. Par exemple, voici l'encodage direct d'un petit jeu de données qui mesure la distance du saut (`jump`) en cm de grenouilles taureaux *Lithobates catesbeianus* (Shaw 1802) en fonction de leur masse (`weight`) en g pour cinq individus différents (`ind`). Vous pouvez annoter ce data frame de la façon suivante :
+Vous avez pu vous apercevoir que la fonction `read()` permet d'ajouter certaines métadonnées comme les unités aux variables d'un jeu de données. Cependant, il n'est pas toujours possible de rajouter les métadonnées dans un tableau sous forme électronique, mais il faut toujours les consigner dans un **cahier de laboratoire**, et ensuite les **retranscrire dans le rapport**. La fonction `labelise()` vous permet de rajouter le **label** et les **unités** de mesure pour vos différentes variables directement dans le tableau. Par exemple, voici l'encodage direct d'un petit jeu de données qui mesure la distance du saut (`jump`) en cm de grenouilles-taureaux *Lithobates catesbeianus* (Shaw 1802) en fonction de leur masse (`weight`) en g pour cinq individus différents (`ind`). Vous pouvez annoter ce data frame de la façon suivante :
 
 ```{r}
 frog <- dtx_rows(
@@ -558,7 +558,7 @@ L'utilisation des fonction `spivot_longer()` et `spivot_wider()` de `SciViews::R
 
 Prenons l'exemple d'un jeu de données provenant de l'article scientifique suivant : [Paleomicrobiology to investigate copper resistance in bacteria: isolation and description of *Cupriavidus necator* B9 in the soil of a medieval foundry](https://orbi.umons.ac.be/handle/20.500.12907/5748). L'article est basé sur l'analyse métagénomique de type "shotgun" de quatre communautés microbiennes (notées `c1`, `c4`, `c7` et `c10`, respectivement)[^06-donnees-qualitatives-6]. Il en résulte une longue liste de séquences que l'on peut attribuer à des règnes.
 
-[^06-donnees-qualitatives-6]: Les analyses métagénomiques coûtent très cher. Il est souvent impossible de faire des réplicats. Un seul échantillon d'ADN a donc été séquencé ici pour chaque communauté.
+[^06-donnees-qualitatives-6]: Les analyses métagénomiques coûtent très cher. Il est souvent impossible de faire des répliquas. Un seul échantillon d'ADN a donc été séquencé ici pour chaque communauté.
 
 ```{r}
 shotgun_wide <- dtx(
@@ -802,11 +802,11 @@ if (exists("assignment"))
 
 -   Un [aide-mémoire général](https://www.business-science.io/r-cheatsheet.html) en science des données avec lien vers les sites Web importants et les autres aide-mémoires. À partir de là, vous pouvez retrouver les packages, puis les fonctions qui réalisent telle ou telle transformation des données. Allez ensuite voir la page d'aide de la fonction avec `?ma_fonction`. Vous pouvez aussi rechercher sur <https://stackoverflow.com>, en précédent le nom de la fonction par "[R]" (R entre crochets) pour restreindre la recherche uniquement dans les pages relatives au langage R.
 
--   Le chapitre relatif aux [jointures de **R for Data Science (2e)**](https://r4ds.hadley.nz/joins.html) contient divers exemples de transformation des données à partir de un ou plusieurs tableaux et présente aussi d'autres formes de jointures.
+-   Le chapitre relatif aux [jointures de **R for Data Science (2e)**](https://r4ds.hadley.nz/joins.html) contient divers exemples de transformation des données à partir d'un ou plusieurs tableaux et présente aussi d'autres formes de jointures.
 
 ## Récapitulatif des exercices
 
-Vous venez de terminer le module 6 qui clôture la première partie du cours. Ce module vous a permis d'apprendre à présenter correctement des données (cas par variables ou tableau de contingence), à plannifier vos mesures et préparer votre échantillonnage, à recombiner, remodeler et fusionner des tableaux. Pour évaluer votre compréhension de cette matière, vous aviez les exercices suivants à réaliser :
+Vous venez de terminer le module 6 qui clôture la première partie du cours. Ce module vous a permis d'apprendre à présenter correctement des données (cas par variables ou tableau de contingence), à planifier vos mesures et préparer votre échantillonnage, à recombiner, remodeler et fusionner des tableaux. Pour évaluer votre compréhension de cette matière, vous aviez les exercices suivants à réaliser :
 
 `r show_ex_toc()`
 
