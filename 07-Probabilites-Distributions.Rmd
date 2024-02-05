@@ -4,7 +4,7 @@
 
 ```{r setup, include=FALSE, echo=FALSE, message=FALSE, results='hide'}
 SciViews::R("infer")
-library(BioDataScience1)
+#library(BioDataScience1)
 ```
 
 ##### Objectifs {.unnumbered}
@@ -29,7 +29,7 @@ vembedr::embed_youtube("5TtwG_LR0iY", width = 770, height = 433)
 Sachant qu'un **évènement** en statistique est un fait qui se produit, la **probabilité** que cet évènement se produise effectivement peut être quantifiée sur base de l'observation des réalisations passées. Ainsi si l'évènement en question s'est produit, disons, 9 fois sur un total de 12 réalisations, nous dirons que la probabilité que cet évènement se produise est de 9/12, soit 0,75. Notez qu'une probabilité est un nombre compris entre zéro (lorsqu'il ne se produit jamais) et un (lorsqu'il se produit toujours).
 ```
 
-On écrira, pour la probabilité de l'évènement *E* :
+On écrira, pour la probabilité de l'évènement *E* :
 
 $$0 \leq \mathrm{P}(E) \leq 1$$
 
@@ -95,7 +95,7 @@ p_sick_positive / p_positive
 `r h5p(68, height = 400, toc = "Lecture de probabilités")`
 
 ```{block, type='note'}
-Dans le cas de deux faits successifs qui ne peuvent chacun que résulter en deux évènements, nous avons seulement quatre situations possibles. Si l'un des cas est qualifié de positif et l'autre de négatif, nous aurons\ :
+Dans le cas de deux faits successifs qui ne peuvent chacun que résulter en deux évènements, nous avons seulement quatre situations possibles. Si l'un des cas est qualifié de positif et l'autre de négatif, nous aurons :
   
 - les **vrais positifs** (test positif alors que la personne est malade), ici 0.08 * 0.95
 
@@ -110,12 +110,12 @@ Dans le cas de deux faits successifs qui ne peuvent chacun que résulter en deux
 En fait, les performances finales du test de dépistage dépendent *aussi* de la prévalence de la maladie. Ainsi, pour une maladie très commune qui affecterait 80% de la population, nous obtenons :
 
 ```{r}
-# Faux positifs
-0.20 * 0.10
 # Vrais positifs
 0.80 * 0.95
+# Faux positifs
+0.20 * 0.10
 # Total des positifs
-0.20 * 0.10 + 0.80 * 0.95
+0.80 * 0.95 + 0.20 * 0.10
 # Fractions de tests positifs qui sont corrects
 (0.80 * 0.95) / (0.20 * 0.10 + 0.80 * 0.95)
 ```
@@ -123,12 +123,12 @@ En fait, les performances finales du test de dépistage dépendent *aussi* de la
 Ouf ! Dans ce cas-ci le test positif est correct dans 97,4% des cas. Mais qu'en serait-il si la maladie est très rare (probabilité de 0,008) ?
 
 ```{r}
-# Faux positifs
-0.992 * 0.10
 # Vrais positifs
 0.008 * 0.95
+# Faux positifs
+0.992 * 0.10
 # Total des positifs
-0.992 * 0.10 + 0.008 * 0.95
+0.008 * 0.95 + 0.992 * 0.10
 # Fractions de tests positifs qui sont corrects
 (0.008 * 0.95) / (0.992 * 0.10 + 0.008 * 0.95)
 ```
@@ -171,7 +171,9 @@ $$\mathrm{P}(malade|positif) * \mathrm{P}(positif) = \mathrm{P}(positif\, et\, m
 
 Donc, nous avons aussi :
 
-$$\mathrm{P}(malade|positif) * \mathrm{P}(positif) = \mathrm{P}(positif|malade) * \mathrm{P}(malade)$$ ... et en divisant les deux termes par $\mathrm{P}(positif)$, nous obtenons :
+$$\mathrm{P}(malade|positif) * \mathrm{P}(positif) = \mathrm{P}(positif|malade) * \mathrm{P}(malade)$$
+
+... et en divisant les deux termes par $\mathrm{P}(positif)$, nous obtenons :
 
 $$\mathrm{P}(malade|positif) = \frac{\mathrm{P}(positif|malade) * \mathrm{P}(malade)}{\mathrm{P}(positif)}$$
 
@@ -182,7 +184,7 @@ $$\mathrm{P}(A|B) = \frac{\mathrm{P}(B|A) * \mathrm{P}(A)}{\mathrm{P}(B)}$$
 
 ```
 
-Cette équation nous donne une façon simple de déterminer $\mathrm{P}(malade|positif)$ à partir de $\mathrm{P}(positif|malade)$, $\mathrm{P}(malade)$, et $\mathrm{P}(positif)$, c'est-à-dire à partir des probabilités auxquelles nous avons facilement accès expérimentalement en pratique. Calculez comme exercice la probabilité qu'un patient soit malade s'il est positif au test *via* le théorème de Bayes, et comparez le résultat de votre calcul à ce que nous avions obtenu plus haut (45.2%).
+Cette équation nous donne une façon simple de déterminer $\mathrm{P}(malade|positif)$ à partir de $\mathrm{P}(positif|malade)$, $\mathrm{P}(malade)$, et $\mathrm{P}(positif)$, c'est-à-dire à partir des probabilités auxquelles nous avons facilement accès expérimentalement en pratique. Calculez comme exercice la probabilité qu'un patient soit malade s'il est positif au test avec le théorème de Bayes, et comparez le résultat de votre calcul à ce que nous avions obtenu plus haut (45.2%).
 
 ```{block, type='note'}
 **À retenir**
@@ -285,13 +287,13 @@ Dans une population de 100 personnes dont les proportions des différents groupe
 En statistique, nous appelons cela un **tirage au sort sans remise**. Le résultat est très différent si le premier individu tiré au hasard était remis dans la population et pouvait être éventuellement pris à nouveau au second ou troisième tirage (**tirage au sort avec remise**). Notez aussi que, pour une population de taille infinie ou très grande, les deux types de tirage au sort sont équivalents à celui **avec** remise car enlever un individu d'une population infinie ne change pas fondamentalement son effectif, donc les probabilités ultérieures.
 ```
 
-Cette question doit s'écrire à l'aide de probabilités conditionnelles : $\mathrm{P}(B\, et\, B\, et\, B) = \mathrm{P}(B) et \mathrm{P}(B|B) et \mathrm{P}(B|2B)$ ($\mathrm{P}(B|2B)$ correspond à la probabilité conditionnelle d'obtenir B si les deux individus précédents déjà récupérés sont eux aussi tous les deux du groupe B). Donc :
+Cette question doit s'écrire à l'aide de probabilités conditionnelles : $\mathrm{P}(B\, et\, B\, et\, B) = \mathrm{P}(B)\ et\ \mathrm{P}(B|B)\ et\ \mathrm{P}(B|2B)$ ($\mathrm{P}(B|2B)$ correspond à la probabilité conditionnelle d'obtenir B si les deux individus précédents déjà récupérés sont eux aussi tous les deux du groupe B). Donc :
 
 ```{r}
 10 / 100 * 9 / 99 * 8 / 98
 ```
 
-Il s'agit d'évènements successifs **non indépendants**. En effet, le retrait d'un individu de la population de taille finie *modifie* les proportions relatives des groupes sanguins dans le reste de la population, et donc, les probabilités aux tirages suivants. Ainsi pour le groupe B, nous n'avons plus que 9 individus de ce groupe dans une population de 99 individus après le premier tirage d'un individu du groupe B ! Autrement dit, $\mathrm{P}(B|B) \neq \mathrm{P}(B|not\ B)$. On a donc, $\mathrm{P}(B|B) = 9/99$ et ensuite $\mathrm{P}(B|2B) = 8/98$.
+Il s'agit d'évènements successifs **non indépendants**. En effet, le retrait d'un individu de la population de taille finie *modifie* les proportions relatives des groupes sanguins dans le reste de la population, et donc, les probabilités aux tirages suivants. Ainsi pour le groupe B, nous n'avons plus que neuf individus de ce groupe dans une population de 99 individus après le premier tirage d'un individu du groupe B ! Autrement dit, $\mathrm{P}(B|B) \neq \mathrm{P}(B|not\ B)$. On a donc, $\mathrm{P}(B|B) = 9/99$ et ensuite $\mathrm{P}(B|2B) = 8/98$.
 
 ##### À vous de jouer ! {.unnumbered}
 
@@ -311,7 +313,7 @@ Avant d'explorer ces lois de distributions statistiques, nous devons d'abord int
 
 ## Distribution uniforme
 
-La loi de la distribution uniforme se rapporte à un mécanisme qui génère **tous les évènements de manière équiprobable**.
+La loi de distribution uniforme se rapporte à un mécanisme qui génère **tous les évènements de manière équiprobable**.
 
 ### Distribution discrète
 
@@ -319,7 +321,7 @@ Dans le cas d'évènements discrets, si $n_E$ est le nombre total d'évènements
 
 $$\mathrm{P}(E) = \frac{1}{n_E}$$
 
-La distribution uniforme est d'application pour les jeux de hasard (dés, boules de loto ...). En biologie, elle est plus rare. Dans le cas d'un sexe-ratio de 1:1 (autant de mâles que de femelles), la probabilité qu'un nouveau-né soit un mâle ou une femelle suit une distribution uniforme et vaut 1/2. La distribution spatiale des individus dans une population biologique peut être uniforme lorsque les individus interagissent de telle manière que la distance entre eux soit identique (par exemple, dans un groupe de manchots *Aptenodytes patagonicus* sur la banquise). Imaginons un animal hypothétique pour lequel la portée peut être de 1 à 4 petits de manière équiprobable. Nous avons alors 1/4 des portées qui présentent respectivement, 1, 2, 3 ou 4 petits (Fig. \@ref(fig:unif1)).
+La distribution uniforme est d'application pour les jeux de hasard (dés, boules de loto...). En biologie, elle est plus rare. Dans le cas d'un sexe-ratio de 1:1 (autant de mâles que de femelles), la probabilité qu'un nouveau-né soit un mâle ou une femelle suit une distribution uniforme et vaut 1/2. La distribution spatiale des individus dans une population biologique peut être uniforme lorsque les individus interagissent de telle manière que la distance entre eux soit identique (par exemple, dans un groupe de manchots *Aptenodytes patagonicus* sur la banquise). Imaginons un animal hypothétique pour lequel la portée peut être de 1 à 4 petits de manière équiprobable. Nous avons alors 1/4 des portées qui présentent respectivement, 1, 2, 3 ou 4 petits (Fig. \@ref(fig:unif1)).
 
 ```{r unif1, echo=FALSE, fig.cap="Probabilité du nombre de petits dans une portée qui suivrait un distribution strictement uniforme entre 1 et 4."}
 dtx(Portée = 1:4, Probabilité = 1/4) %>.%
@@ -330,7 +332,7 @@ dtx(Portée = 1:4, Probabilité = 1/4) %>.%
 
 ### Distribution continue
 
-Nous avons déjà évoqué le fait que les probabilités issues de distributions continues ne se traitent pas comme celles de probabilités discrètes. Il est maintenant temps d'approfondir la question. Considérons une distribution uniforme discrète, admettant donc un très grand nombre d'évènements équiprobables (avec ce nombre tendant vers l'infini). Donc, la probabilité de chaque évènement est un divisé par le nombre d'évènements possibles $n_E = \infty$ :
+Nous avons déjà évoqué le fait que les probabilités issues de distributions continues ne se traitent pas comme celles de probabilités discrètes. Il est maintenant temps d'approfondir la question. Considérons une distribution uniforme discrète, admettant donc un très grand nombre d'évènements équiprobables (avec ce nombre tendant vers l'infini). Donc, la probabilité de chaque évènement est de une unité divisée par le nombre d'évènements possibles $n_E = \infty$ :
 
 $$\mathrm{P}(E) = \frac{1}{n_E} = \frac{1}{\infty} = 0$$
 
@@ -390,7 +392,7 @@ chart$cumulative(U1) +
 ```
 
 ```{block, type='note'}
-**Notation :** nous noterons qu'une variable suit une loi de distribution comme ceci (le tilde ~ se lit "suit une distribution", et *U* représente la distribution uniforme avec entre parenthèses, les *paramètres* de la distribution, ici, les bornes inférieure et supérieure de la distribution)\ :
+**Notation :** nous noterons qu'une variable suit une loi de distribution comme ceci (le tilde ~ se lit "suit une distribution", et *U* représente la distribution uniforme avec entre parenthèses, les *paramètres* de la distribution, ici, les bornes inférieure et supérieure de la distribution) :
 
 $$X \sim U(0, 4)$$
 
@@ -443,7 +445,7 @@ punif(2.0, min = 0, max = 4, lower.tail = TRUE)
 La réponse est 0.125, soit une fois sur huit observations, en moyenne, le temps d'attente enregistré sera compris entre 2 et 2.5 minutes.
 
 ```{block, type='note'}
-Le calcul de probabilités sur base de lois de distributions continues se fait via les aires à gauche ou à droite d'un quantile sur le graphique de densité de probabilité. Pour une aire centrale, nous soustrayons les aires à gauche des deux quantiles respectifs.
+Le calcul de probabilités sur base de lois de distributions continues se fait par l'intermédiaire des aires à gauche ou à droite d'un quantile sur le graphique de densité de probabilité. Pour une aire centrale, nous soustrayons les aires à gauche des deux quantiles respectifs.
 ```
 
 ### Probabilités vers quantiles
@@ -502,6 +504,7 @@ Le snippet `.iurandom` nécessite quelques explications supplémentaires. R est 
 
 [^07-probabilites-distributions-2]: Si vous utilisez `set.seed()` prenez soin de spécifier **toujours une valeur différente** prise au hasard comme argument de la fonction ! -->
 ```
+
 ### Calculs dans R
 
 Dans R de base, pour chaque distribution statistique, quatre fonctions sont proposées qui commencent par p/q/r/d, suivi d'un diminutif pour la loi de distribution. Pour la distribution uniforme, c'est `unif`. Nous avons donc :
@@ -539,7 +542,7 @@ set.seed(575); generate(U, 5)[[1]]
 set.seed(575); runif(5, min = 0, max = 4)
 ```
 
-Notez l'utilisation de `set.seed()` ici. Cette fonction initialise le générateur de nombres **pseudo-aléatoires**. Il s'agit d'un code informatique qui génère une suite de nombres qui a des propriétés équivalentes à une série réellement aléatoire, mais sans l'être réellement. On initie le générateur à un endroit dans la suite de nombres à l'aide de `set.seed()` auquel on donne un nombre entier au hasard comme argument (naturellement, on doit donner à chaque fois un autre nombre, ... sauf si on veut générer exactement la même suite, comme c'est le cas ci-dessus pour comparer la sortie de `generate(U)` par rapport à `runif()`). L'utilisation de `set.seed()` rend votre code **reproductible**. N'hésitez donc pas à l'utiliser avant tout calcul faisant intervenir le générateur de nombres pseudo-aléatoires dans vos documents comme ceci :
+Notez l'utilisation de `set.seed()` ici. Cette fonction initialise le générateur de nombres **pseudo-aléatoires**. Il s'agit d'un code informatique qui génère une suite de nombres qui a des propriétés équivalentes à une série réellement aléatoire, mais sans l'être réellement. On initie le générateur à un endroit dans la suite de nombres à l'aide de `set.seed()` auquel on donne un nombre entier au hasard comme argument (naturellement, on doit donner à chaque fois un autre nombre ... sauf si on veut générer exactement la même suite, comme c'est le cas ci-dessus pour comparer la sortie de `generate(U)` par rapport à `runif()`). L'utilisation de `set.seed()` rend votre code **reproductible**. N'hésitez donc pas à l'utiliser avant tout calcul faisant intervenir le générateur de nombres pseudo-aléatoires dans vos documents comme ceci :
 
 ```{r}
 set.seed(946)
@@ -560,7 +563,7 @@ variance(U)
 support(U)
 ```
 
-Bien que nous ne l'utiliserons pas dans ce cours, les objets **distribution** peuvent contenir plusieurs distributions différentes, et même, une mixture de plusieurs distributions. Enfin, dernier avantage, à condition de charger le package `BioDataScience1` à l'aide de l'instruction `library(BioDataScience1)`, vous pouvez utiliser `chart()` pour créer le graphique de densité de probabilité ou `chart$cumulative()` pour tracer le graphique de densité de probabilité cumulée très facilement pour distribution. Ensuite, vous y ajouter une aire à l'aide de `geom_funfill()` en utilisant `dfun()` pour une aire de densité ou `cdfun()` pour une aire de densité cumulée. Pour annoter le graphique, vous utilisez `annotate("text")`. Voici ce que cela donne :
+Bien que nous ne l'utiliserons pas dans ce cours, les objets **distribution** peuvent contenir plusieurs distributions différentes, et même, une mixture de plusieurs distributions. Enfin, dernier avantage, vous pouvez utiliser `chart()` pour créer le graphique de densité de probabilité ou `chart$cumulative()` pour tracer le graphique de densité de probabilité cumulée très facilement pour distribution. Ensuite, vous y ajouter une aire à l'aide de `geom_funfill()` en utilisant `dfun()` pour une aire de densité ou `cdfun()` pour une aire de densité cumulée. Pour annoter le graphique, vous utilisez `annotate("text")`. Voici ce que cela donne :
 
 ```{r}
 chart(U) +
@@ -577,7 +580,7 @@ chart$cumulative(U) +
 
 ## Distribution binomiale
 
-Partons d'un exemple pratique pour découvrir la distribution binomiale. La [mucoviscidose](http://www.muco.be/fr/mucoviscidose/maladie-génétique) est, dans la population européenne, la plus fréquente des maladies génétiques héréditaires. Elle se caractérise par un mucus (voies respiratoires) anormalement épais qui est à l'origine de diverses complications. L'altération d'une protéine CFTR est à l'origine de cette maladie. Comme le gène qui code pour cette protéine est récessif, il faut que les deux allèles soient porteurs simultanément de la mutation pour que la maladie apparaisse. Parmi des familles de six enfants dont le père et la mère normaux sont tous deux porteurs hétérozygotes du gène altéré, quelle est la probabilité d'obtenir 0, 1, 2, ..., 6 enfants atteints de mucoviscidose ?
+Partons d'un exemple pratique pour découvrir la distribution binomiale. La [mucoviscidose](http://www.muco.be/fr/mucoviscidose/maladie-génétique) est, dans la population européenne, la plus fréquente des maladies génétiques héréditaires. Elle se caractérise par un mucus dans les voies respiratoires anormalement épais qui est à l'origine de diverses complications. L'altération d'une protéine CFTR est à l'origine de cette maladie. Comme le gène qui code pour cette protéine est récessif, il faut que les deux allèles soient porteurs simultanément de la mutation pour que la maladie apparaisse. Parmi des familles de six enfants dont le père et la mère normaux sont tous deux porteurs hétérozygotes du gène altéré, quelle est la probabilité d'obtenir 0, 1, 2, ..., 6 enfants atteints de mucoviscidose ?
 
 ### Épreuve de Bernoulli
 
@@ -585,7 +588,7 @@ La **distribution binomiale** est une loi de distribution discrète qui répond 
 
 -   résultats binaires (deux évènements disjoints possibles uniquement ; l'un sera nommé "succès" et l'autre "échec" par convention),
 -   essais indépendants (les probabilités ne changent pas d'un essai à l'autre),
--   *n* le nombre d'essais totaux est fixé à l'avance,
+-   *n*, le nombre d'essais totaux, est fixé à l'avance,
 -   probabilité du "succès" *p* constante (probabilité de l'"échec" = 1 - *p*).
 
 Les conditions particulières de cette situation sont appelées **épreuve de Bernoulli**. Mathématiquement, nous l'écrirons comme suit. Soit une variable aléatoire $Y$ qui comptabilise le nombre de succès, la probabilité d'obtenir $j$ succès parmi $n$ essais est :
@@ -600,15 +603,15 @@ $C^j_n$ représente le nombre de combinaisons possibles pour obtenir $j$ succès
 
 $$Y \sim B(n,p)$$
 
-Notre exemple rentre parfaitement dans le cadre de l'épreuve de Bernoulli avec *n* = 6 et *p*, la probabilité du succès, c'est-à-dire, d'avoir un enfant qui ne développe pas la maladie, de 3/4 ou 0.75 : $Y \sim B(6, 0.75)$.
+Notre exemple de la mucoviscidose au sein d'une famille dont les parents sont tous deux hétérozygotes rentre parfaitement dans le cadre de l'épreuve de Bernoulli avec *n* = 6 et *p*, la probabilité du succès, c'est-à-dire, d'avoir un enfant qui ne développe pas la maladie, de 3/4 ou 0.75 : $Y \sim B(6, 0.75)$.
 
 ### Calculs et graphiques
 
 Les calculs sur base d'une distribution binomiale sont assez similaires à ceux de la distribution uniforme dans R, en remplaçant `unif` par `binom` dans le nom des fonctions p/q/r/d. Sinon, la fonction `dist_binomial(size = 6, prob = 0.75)` la crée. Puisqu'il s'agit d'une distribution discrète, un petit nombre d'évènements possibles existent. Il est assez facile de créer une table qui reprend l'ensemble des probabilités possibles :
 
 ```{r}
-(binom_table <- dtx(success = 0:6,
-  probability = dbinom(0:6, size = 6, prob = 0.75)))
+(binom_table <- dtx(succès = 0:6,
+  probabilité = dbinom(0:6, size = 6, prob = 0.75)))
 ```
 
 La représentation graphique donne la Fig. \@ref(fig:binom).
@@ -659,7 +662,7 @@ factorial(100)
 factorial(1600)
 ```
 
-Or, le factoriel est un nombre qui grandit très, très vite. Déjà le factoriel de 100 est un nombre à 157 chiffres. Nous voyons que R est incapable de calculer précisément le factoriel de 1000. Ce nombre est supérieur au plus grand nombre que l'ordinateur peut représenter pour un `double` en R (`r .Machine$double.xmax`). Donc, nous sommes incapables de répondre à la question à l'aide de la loi binomiale à cause du passage nécessaire par un calcul du factoriel de très grands nombres.
+Or, le factoriel est un nombre qui grandit très, très vite. Déjà le factoriel de 100 est un nombre à 157 chiffres. Nous voyons que R est incapable de calculer précisément le factoriel de 1000. Ce nombre est supérieur au plus grand nombre que l'ordinateur peut représenter pour un **double** en R (`r .Machine$double.xmax`). Donc, nous sommes incapables de répondre à la question à l'aide de la loi binomiale à cause du passage nécessaire par un calcul du factoriel de très grands nombres.
 
 ### Évènements rares
 
@@ -703,9 +706,9 @@ qpois(p = 1/4, lambda = 3)
 
 `r learnr("A07Lb_distri", title = "Lois de distributions", toc = "Lois de distributions")`
 
-## Distribution Normale
+## Distribution normale
 
-La vidéo suivante vous permettra de récapituler certaines notions étudiées jusqu'ici concernant les types de variables et vous introduira la loi de distribution Normale ou distribution de Gauss ou encore, gaussienne.
+La vidéo suivante vous permettra de récapituler certaines notions étudiées jusqu'ici concernant les types de variables et vous introduira la loi de distribution normale ou distribution de Gauss ou encore, gaussienne.
 
 ```{r, echo=FALSE}
 vembedr::embed_youtube("THk2GBxkg4o", width = 770, height = 433)
@@ -713,9 +716,9 @@ vembedr::embed_youtube("THk2GBxkg4o", width = 770, height = 433)
 
 ### Une "courbe en cloche"
 
-La distribution Normale est la distribution la plus utilisée en statistique. Elle se rencontre très souvent en biologie comme dans bien d'autres domaines, à chaque fois qu'une variable continue définie sur tout le domaine des réels est issue d'un nombre important de composantes indépendantes dont les effets sont additifs. La forme de sa densité de probabilité est caractéristique et dite "en cloche" (Fig. \@ref(fig:normal)).
+La distribution normale est la distribution la plus utilisée en statistique. Elle se rencontre très souvent en biologie comme dans bien d'autres domaines, à chaque fois qu'une variable continue définie sur tout le domaine des réels est issue d'un nombre important de composantes indépendantes dont les effets sont additifs. La forme de sa densité de probabilité est caractéristique et dite "en cloche" (Fig. \@ref(fig:normal)).
 
-```{r normal, echo=FALSE, fig.cap="Un exemple de distribution Normale."}
+```{r normal, echo=FALSE, fig.cap="Un exemple de distribution normale."}
 # Normal distribution (density probability) with parameters:
 #.mu <- 175; .s <- 10 #  mu = .mu and sigma = .s
 #.col <- 1; .add <- FALSE # Plot parameters
@@ -742,13 +745,15 @@ Il s'agit d'une densité de probabilité symétrique et asymptotique à ses deux
 
 $$\Phi(Y) = \frac{1}{ \sigma \sqrt{2 \pi}} e^{-\frac{1}{2} \left( \frac{Y - \mu}{\sigma} \right)^2}$$
 
-Pour une variable aléatoire $Y$ qui suit une distribution normale avec une moyenne $\mu$ et un écart type $\sigma$, nous écrirons :
+Pour une variable aléatoire $Y$ qui suit une distribution normale avec une moyenne $\mu$ et un écart type $\sigma$, nous considérons généralement le carré de l'écart type qui est la variance, notée $\sigma^2$  :
 
-$$Y \sim N(μ, σ)$$
+$$Y \sim N(\mu, \sigma^2)$$
 
-### Loi Normale réduite
+À noter que l'on rencontre aussi profois la notation utilisant l'écart type ou lieu de la variance, donc $Y \sim N(\mu, \sigma)$.
 
-Parmi toutes les distributions Normales possibles, l'une d'entre elles est particulière : la **distribution Normale réduite** qui a toujours une moyenne nulle et un écart type unitaire.
+### Loi normale réduite
+
+Parmi toutes les distributions normales possibles, l'une d'entre elles est particulière : la **distribution normale réduite** qui a toujours une moyenne nulle et une variance, et donc un écart type unitaire.
 
 $$N(0, 1)$$
 
@@ -756,7 +761,7 @@ Elle représente la distribution des valeurs pour une variable qui a été **sta
 
 $$Z = \frac{Y - \mu}{\sigma}$$
 
-Sa formulation est nettement simplifiée.
+Sa formulation est nettement simplifiée par rapport à la distribution normale :
 
 $$\Phi(Z) = \frac{1}{\sqrt{2 \pi}} e^{-\frac{Z^2}{2}}$$
 
@@ -795,9 +800,9 @@ chart(N0) +
   annotate("text", x = c(-0.5, 1.5), y = 0.05, label = c("P = 68%", "P = 95%"), col = "red")
 ```
 
-### Fonctions dans R pour la Normale
+### Fonctions dans R pour la normale
 
-Les fonctions p/q/r/d relatives à la distribution Normale dans R sont composées du suffixe `norm`. Le calcul de probabilités se fait à l'aide de `pnorm()`, de quantiles à partir de `qnorm()`. Un échantillon pseudo-aléatoire s'obtient à partir de `rnorm()`. L'objet **distribution** s'obtient avec `dist_normal(mu =..., sigma = ...)`. Faites bien attention que les arguments équivalents dans les fonctions p/q/r/d sont `mean =` et `sd =`. Dans les deux cas, il s'agit de la moyenne et de l'écart type de la distribution qui sont ses deux paramètres. De plus, le nom formaté de la distribution reprend la variance à la place de l'écart type (variance = écart type^2^). Cela donne donc :
+Les fonctions p/q/r/d relatives à la distribution normale dans R sont composées du suffixe `norm`. Le calcul de probabilités se fait à l'aide de `pnorm()`, de quantiles à partir de `qnorm()`. Un échantillon pseudo-aléatoire s'obtient à partir de `rnorm()`. L'objet **distribution** s'obtient avec `dist_normal(mu =..., sigma = ...)`. Faites bien attention que les arguments équivalents dans les fonctions p/q/r/d sont `mean =` et `sd =`. Dans les deux cas, il s'agit de la moyenne et de l'écart type de la distribution qui sont ses deux paramètres. De plus, le nom formaté de la distribution reprend la variance à la place de l'écart type (variance = écart type^2^). Cela donne donc :
 
 ```{r}
 N1 <- dist_normal(mu = 12, sigma = 1.5) # Arguments mu =, sigma =
@@ -808,19 +813,19 @@ qnorm(p = 0.95, mean = 12, sd = 1.5) # Notez le nom des arguments mean = et sd =
 
 ### Théorème central limite
 
-Une des raisons pour lesquelles la distribution Normale est très répandue est liée au fait que beaucoup d'autres distributions tendent vers elle de manière asymptotique. Par exemple, une distribution binomiale symétrique (avec $p = 0.5$) et pour un $n$ croissant ressemblera de plus en plus à une distribution normale. Le théorème central limite démontre cela, quelle que soit la distribution de départ. En pratique, la distribution Normale est souvent une bonne approximation d'autres distributions pour des tailles d'échantillons déjà à partir de quelques dizaines d'individus.
+Une des raisons pour lesquelles la distribution normale est très répandue est liée au fait que beaucoup d'autres distributions tendent vers elle de manière asymptotique. Par exemple, une distribution binomiale symétrique (avec $p = 0.5$) et pour un $n$ croissant ressemblera de plus en plus à une distribution normale. Le théorème central limite démontre cela, quelle que soit la distribution de départ. En pratique, la distribution normale est souvent une bonne approximation d'autres distributions pour des tailles d'échantillons déjà à partir de quelques dizaines d'individus.
 
 ```{r, echo=FALSE}
 vembedr::embed_youtube("4dhm2QAA2x4", width = 770, height = 433)
 ```
 
-## Distribution log-Normale
+## Distribution log-normale
 
-La loi log-Normale est utilisée pour représenter la distribution d'une variable aléatoire qui résulte de la multiplication d'un grand nombre de petits effets indépendants entre eux. C'est le cas en biologie et en chimie, par exemple, la taille d'un animal, la concentration d'une molécule en solution, la température d'un matériau, etc. Ces variables sont définies uniquement pour des valeurs nulles ou positives. Une taille et une concentration négatives ne sont pas possibles. De même pour une température en dessous du zéro absolu (attention, dans ce cas, la température doit être mesurée en Kelvin).
+La loi log-normale est utilisée pour représenter la distribution d'une variable aléatoire qui résulte de la multiplication d'un grand nombre de petits effets indépendants entre eux. C'est le cas en biologie et en chimie, par exemple, la taille d'un animal, la concentration d'une molécule en solution, la température d'un matériau, etc. Ces variables sont définies uniquement pour des valeurs nulles ou positives. Une taille et une concentration négatives ne sont pas possibles. De même pour une température en dessous du zéro absolu (attention, dans ce cas, la température doit être mesurée en Kelvin).
 
 ### Transformée log
 
-La distribution log-Normale devient Normale lorsque nous transformons la variable en son logarithme. Donc, si :
+La distribution log-normale devient normale lorsque nous transformons la variable en son logarithme. Donc, si :
 
 $$X \sim log{\text -}N(0, 0.5)$$
 
@@ -828,9 +833,9 @@ alors :
 
 $$log(X) \sim N(0, 0.5)$$
 
-Par facilité, on défini ses deux paramètres de manière relative à la moyenne $\mu$ et à l'écart type $\sigma$ qu'a la distribution Normale obtenue après transformation logarithmique. Voici à quoi ressemble la densité de probabilité de cette distribution (Fig \@ref(fig:lognormal)). C'est une distribution asymétrique qui démarre du quantile zéro et est asymptotique à droite en $+\infty$.
+Par facilité, on défini ses deux paramètres de manière relative à la moyenne $\mu$ et à la variance $\sigma^2$ qu'a la distribution normale obtenue après transformation logarithmique. Voici à quoi ressemble la densité de probabilité de cette distribution (Fig \@ref(fig:lognormal)). C'est une distribution asymétrique qui démarre du quantile zéro et est asymptotique à droite en $+\infty$.
 
-```{r lognormal, echo=FALSE, fig.cap="Un exemple de distribution log-Normale."}
+```{r lognormal, echo=FALSE, fig.cap="Un exemple de distribution log-normale."}
 # Log-Normal distribution (density probability) with parameters:
 #.mul <- 0; .sl <- 0.5 #  .mul and .sl(sigma) in log scale
 #.col <- 1; .add <- FALSE # Plot parameters
@@ -845,12 +850,13 @@ Par facilité, on défini ses deux paramètres de manière relative à la moyenn
 #  geom_line() +
 #  xlab("Quantile") +
 #  ylab("Densité de probabilité")
-chart(dist_lognormal(mu = 0, sigma = 0.5), xlim = c(0, 4))
+chart(dist_lognormal(mu = 0, sigma = 0.5), xlim = c(0, 4)) +
+  ylab("Densité de probabilité")
 ```
 
-### Fonction dans R pour la log-Normale
+### Fonction dans R pour la log-normale
 
-Les fonctions p/q/r/d relatives à la distribution log-Normale dans R utilisent le suffixe `lnorm`. Le calcul de probabilités se fait à l'aide de `plnorm()`, les quantiles se déterminent à partir de `qlnorm()` et un échantillon pseudo-aléatoire se calcule en utilisant `rlnorm()`. Un objet **distribution** contenant une loi log_Normale se crée à l'aide de `dist_lognormal()`. Ses arguments sont toujours `mu =` et `sigma =`, mais pour les fonctions p/q/r/d, les arguments correspondants sont `meanlog =`, et `sdlog =`.
+Les fonctions p/q/r/d relatives à la distribution log-normale dans R utilisent le suffixe `lnorm`. Le calcul de probabilités se fait à l'aide de `plnorm()`, les quantiles se déterminent à partir de `qlnorm()` et un échantillon pseudo-aléatoire se calcule en utilisant `rlnorm()`. Un objet **distribution** contenant une loi log-normale se crée à l'aide de `dist_lognormal()`. Ses arguments sont toujours `mu =` et `sigma =`, mais pour les fonctions p/q/r/d, les arguments correspondants sont `meanlog =`, et `sdlog =`.
 
 ```{r}
 lN1 <- dist_lognormal(mu = 1, sigma = 0.5) # Arguments mu =, sigma =
@@ -867,13 +873,13 @@ Il n'est pas toujours facile de déterminer quelle est la loi de distribution qu
 Un **quantile** divise des données quantitatives en deux sous-groupes de telle manière que le groupe contenant les observations plus petites que ce quantile représente un effectif équivalent à la fraction considérée. Donc, un quantile 10% correspondra à la valeur qui sépare le jeu de données en 10% des observations les plus petites et 90% des observations les plus grandes.
 ```
 
-Ce quantile dit **observé** est comparable au quantile dit **théorique** que nous pouvons calculer sur base d'une probabilité équivalente à la fraction considérée. Prenons un exemple simple pour fixer les idées. Dans les données relatives au plancton, nous avons 50 œufs allongés mesurés. Nous nous demandons si leur taille mesurée ici par la surface (`area`) de la particule à l'image suit une distribution log-Normale. Dans ce cas, il est plus facile de transformer les données en logarithme et de comparer les valeurs ainsi recalculées à une distribution Normale.
+Ce quantile dit **observé** est comparable au quantile dit **théorique** que nous pouvons calculer sur base d'une probabilité équivalente à la fraction considérée. Prenons un exemple simple pour fixer les idées. Dans les données relatives au plancton, nous avons 50 œufs allongés mesurés. Nous nous demandons si leur taille mesurée ici par la surface (variable `area`) de la particule à l'image suit une distribution log-normale. Dans ce cas, il est plus facile de transformer les données en logarithme et de comparer les valeurs ainsi recalculées à une distribution normale.
 
 ```{r}
 read("zooplankton", package = "data.io") %>.%
   sfilter(., class == "Egg_elongated") %>.%
   smutate(., log_area = log10(area)) %>.%
-  sselect(., area, log_area) %->%
+  sselect(., area, log_area) ->
   eggs
 summary(eggs)
 ```
@@ -883,14 +889,14 @@ chart(data = eggs, ~ area) +
   geom_histogram(bins = 12)
 ```
 
-Sur base de l'histogramme, nous voyons bien que la distribution est soit unimodale et asymétrique, soit bimodale. L'histogramme des données transformées log devrait être plus symétrique si les données originelles suivent bien une distribution log-Normale unimodale.
+Sur base de l'histogramme, nous voyons bien que la distribution est soit unimodale et asymétrique, soit bimodale. L'histogramme des données transformées log devrait être plus symétrique si les données originelles suivent bien une distribution log-normale unimodale.
 
 ```{r}
 chart(data = eggs, ~ log_area) +
   geom_histogram(bins = 12)
 ```
 
-C'est légèrement mieux, mais la distribution ne parait pas parfaitement symétrique, voire peut-être encore bimodale (pas flagrant toutefois). L'histogramme est un bon outil pour visualiser globalement une distribution, mais le **graphique quantile-quantile** offre une représentation plus précise pour *comparer* deux distributions. Comme nous avons 50 observations à disposition, nous pouvons calculer les quantiles tous les 2% à l'aide de la fonction `quantile()`. De même, nous pouvons utiliser `qnorm()` pour calculer les quantiles théoriques selon une distribution Normale réduite. Cela donne :
+C'est légèrement mieux, mais la distribution ne parait pas parfaitement symétrique, voire peut-être encore bimodale (pas flagrant toutefois). L'histogramme est un bon outil pour visualiser globalement une distribution, mais le **graphique quantile-quantile** offre une représentation plus précise pour *comparer* deux distributions. Comme nous avons 50 observations à disposition, nous pouvons calculer les quantiles tous les 2% à l'aide de la fonction `quantile()`. De même, nous pouvons utiliser `qnorm()` pour calculer les quantiles théoriques selon une distribution normale réduite. Cela donne :
 
 ```{r}
 (probas <- seq(from = 0.02, to = 0.98, by = 0.02))
@@ -906,7 +912,8 @@ Si les deux distributions sont compatibles, nous devrions avoir une proportionna
 
 ```{r qqplot1, fig.cap="Graphique quantile-quantile construit à la main."}
 chart(data = qq, q_obs ~ q_theo) +
-  geom_point()
+  geom_point() +
+  labs(x = "Quantiles théoriques", y = "Quantiles observés")
 ```
 
 Cet alignement n'est pas flagrant. Le graphique proposé par la fonction `car::qqPlot()` (Fig. \@ref(fig:qqplot2)) est le même, mais il ajoute différents éléments qui aident à l'interprétation :
