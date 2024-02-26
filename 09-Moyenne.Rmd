@@ -1124,14 +1124,14 @@ Appliquez vos nouvelles connaissances dans le projet GitHub Classroom de groupe 
 
 ```{r assign_A09Ga_human_health_II, echo=FALSE, results='asis'}
 if (exists("assignment2"))
-  assignment2("A09Ga_human_health", part = "II",
+  assignment2("A08Ga_human_health", part = "II",
     url = "https://github.com/BioDataScience-Course/A08Ga_human_health",
     course.ids = c(
       'S-BIOG-027' = !"A08Ga_{YY}M_human_health"),
     course.urls = c(
-      'S-BIOG-027' = "https://classroom.github.com/a/..."),
+      'S-BIOG-027' = "https://classroom.github.com/a/HvBUqMqi"),
     course.starts = c(
-      'S-BIOG-027' = !"{W[27]+1} 13:00:00"),
+      'S-BIOG-027' = !"{W[25]+1} 13:00:00"),
     course.ends = c(
       'S-BIOG-027' = !"{W[37]+1} 23:59:59"),
     term = "Q2", level = 4, n = 4,
