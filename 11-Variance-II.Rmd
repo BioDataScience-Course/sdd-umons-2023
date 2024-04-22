@@ -1,7 +1,6 @@
 # Variance II {#variance2}
 
 ```{r setup, include=FALSE, echo=FALSE, message=FALSE, results='hide'}
-library(MASS) # Pourquoi dois-je faire cela ???
 SciViews::R("infer", "model", lang = "fr")
 ```
 
@@ -226,7 +225,7 @@ if (exists("assignment"))
     course.ids = c(
       'S-BIOG-027' = !"A11Ia_{YY}M_anova2"),
     course.urls = c(
-      'S-BIOG-027' = "https://classroom.github.com/a/..."),
+      'S-BIOG-027' = "https://classroom.github.com/a/cKcEutVN"),
     course.starts = c(
       'S-BIOG-027' = !"{W[33]+1} 13:00:00"),
     course.ends = c(
@@ -522,7 +521,7 @@ if (exists("assignment"))
     course.ids = c(
       'S-BIOG-027' = !"A11Ia_{YY}M_anova2"),
     course.urls = c(
-      'S-BIOG-027' = "https://classroom.github.com/a/..."),
+      'S-BIOG-027' = "https://classroom.github.com/a/cKcEutVN"),
     course.starts = c(
       'S-BIOG-027' = !"{W[33]+1} 13:00:00"),
     course.ends = c(
