@@ -16,6 +16,8 @@ SciViews::R("infer", "explore", lang = "fr")
 
 -   Développer son esprit critique face à des analyses statistiques et des graphiques
 
+-   Réaliser une présentation de ses données attractive à partir de R Markdown ou Quarto.
+
 -   Être capable de discerner les erreurs principales qui se rencontrent dans les graphiques (et ne pas les faire soi-même)
 
 ##### Prérequis {.unnumbered}
@@ -28,7 +30,7 @@ Nous pouvons décrire l'étendue d'une variable numérique à l'aide de la **var
 
 $$var_x = S^2_x = \frac{\sum_{i = 1}^n (x_i - \bar{x})^2}{n-1}$$
 
-L'écart type, noté $\sigma$ dans le cas d'une population et $S$ dans le cas d'un échantillon est la racine carrée de la variance. C'est une autre mesure de la dispersion d'une variable numérique. Donc :
+L'écart type, noté $\sigma$ dans le cas d'une population et $S$ dans le cas d'un échantillon, est la racine carrée de la variance. C'est une autre mesure de la dispersion d'une variable numérique. Donc :
 
 $$S_x = \sqrt{S^2_x}$$
 
@@ -37,9 +39,9 @@ Plus la variance est élevée, plus les observations sont dispersées autour de 
 ```{r, echo=FALSE, results='hide', fig.width=9, fig.height=3}
 set.seed(653643)
 df <- dtx(
-  x  = rnorm(100),
+  x  =  rnorm(100),
   y1 = x + rnorm(100, sd = 0.2),
-  y2  = rnorm(100),
+  y2 = rnorm(100),
   y3 = -x + rnorm(100, sd = 0.2))
 pl <- list(
   chart(data = df, y1 ~ x) + geom_point(),
@@ -49,7 +51,7 @@ pl <- list(
 combine_charts(pl, ncol = 3L)
 ```
 
-Nous pouvons observer que la **forme du nuage de points** diffère entre ces trois situations. Le graphique **A** est allongé le long d'une oblique proche de la première bissectrice. Cela signifie que, lorsque des valeurs de *x* sont faibles, les valeurs de *y1* sont faibles aussi. Lorsque les valeurs de *x* sont élevées, celles de *y1* tendent à l'être également. Nous avons plutôt une **proportionnalité** entre les valeurs observées pour *x* et pour *y1*. Dans le graphique **C** de droite, c'est l'inverse. Nous avons une **proportionnalité inverse** entre *x* et *y3*. Dans le graphique **B** du centre, le nuage de point ne s'étire pas dans une direction oblique particulière. Nous dirons ici qu'il n'y a pas d'association entre *x* et *y2*. Ce type d'association entre deux variables numérique est un élément important dans notre analyse, car un nuage de points qui s'allonge le long d'une direction oblique sur le graphique est signe d'un mécanisme sous-jacent responsable de cette association (mais attention à ne pas conclure directement à un mécanisme de cause à effet direct, voir plus loin). Il serait donc souhaitable de pouvoir quantifier le degré d'une telle association.
+Nous pouvons observer que la **forme du nuage de points** diffère entre ces trois situations. Le graphique **A** est allongé le long d'une oblique. Cela signifie que, lorsque des valeurs de *x* sont faibles, les valeurs de *y1* sont faibles aussi. Lorsque les valeurs de *x* sont élevées, celles de *y1* tendent à l'être également. Nous avons plutôt une **proportionnalité** entre les valeurs observées pour *x* et pour *y1*. Dans le graphique **C** de droite, c'est l'inverse. Nous avons une **proportionnalité inverse** entre *x* et *y3*. Dans le graphique **B** du centre, le nuage de point ne s'étire pas dans une direction oblique particulière. Nous dirons ici qu'il n'y a pas d'association entre *x* et *y2*. Ce type d'association entre deux variables numérique est un élément important dans notre analyse, car un nuage de points qui s'allonge le long d'une direction oblique sur le graphique est signe d'un mécanisme sous-jacent responsable de cette association (mais attention à ne pas conclure directement à un mécanisme de cause à effet direct, voir plus loin). Il serait donc souhaitable de pouvoir quantifier le degré d'une telle association.
 
 Nous pouvons définir la **covariance** comme étant une mesure de la variance dans le même sens pour toutes les paires de valeurs observées entre nos deux variables numériques. Elle se définit de manière très similaire à la variance, mais fait naturellement intervenir simultanément les observations de *x* et *y*, ainsi que leurs moyennes respectives :
 
@@ -63,7 +65,7 @@ cov(df$x, df$y2)
 cov(df$x, df$y3)
 ```
 
-La covariance (fonction `cov()` dans R) fait effectivement le boulot de quantifier l'association entre les deux variables *x* et *y*. Nous avons une valeur positive entre *x* et *y1*, faible et se rapprochant de zéro entre *x* et *y2*, et négative pour le cas *x* et *y3* d'une proportionnalité inverse. Cette mesure n'est cependant pas *normée*, c'est-à-dire qu'elle peut varier vers des valeurs très grandes ou très petites en fonction des données. Donc pour une même forme de nuage de points, la valeur dépendra, par exemple, des unités de mesure choisies. Si je transforme les données de mon jeu fictif `df` en les multipliant par dix pour simuler un changement d'unité dans `df2`, j'obtiens :
+La covariance (fonction `cov()` dans R) quantifie effectivement l'association entre les deux variables *x* et *y*. Nous avons une valeur positive entre *x* et *y1*, faible et se rapprochant de zéro entre *x* et *y2*, et négative pour *x* et *y3* d'une proportionnalité inverse. Cette mesure n'est cependant pas *normée*, c'est-à-dire qu'elle peut varier vers des valeurs très grandes ou très petites en fonction des données. Donc, pour une même forme de nuage de points, la valeur dépendra, par exemple, des unités de mesure choisies. Si je transforme les données de mon jeu fictif `df` en les multipliant par dix pour simuler un changement d'unité dans `df2`, j'obtiens :
 
 ```{r}
 df2 <- df * 10
@@ -93,7 +95,7 @@ cor(df$x, df$y3)
 cor(df2$x, df2$y3)
 ```
 
-Cette fois-ci, nous obtenons la même valeur pour *r* que le calcul se fasse à partir de `df` ou de `df2`. De plus les valeurs absolues très proches de 1 (0,978 dans le cas **A** et 0,980 dans le cas **C**) suggèrent que la proportionnalité est très forte. C'est effectivement ce que nous observons également sur les graphiques.
+Cette fois-ci, nous obtenons la même valeur pour *r* que le calcul se fasse à partir de `df` ou de `df2`. De plus les valeurs absolues très proches de 1 (0,978 dans le cas **A** et 0,980 dans le cas **C**) suggèrent que la proportionnalité est très forte. C'est effectivement ce que nous observons sur les graphiques.
 
 ##### À vous de jouer ! {.unnumbered}
 
@@ -125,15 +127,15 @@ L'association entre deux variables numériques peut ainsi s'envisager selon troi
 
 ### Matrice de corrélation
 
-Dans un cas multivarié (plus de deux variables), nous pouvons toujours étudier les associations entre variables numériques à l'aide de *r* (ou à l'aide de la covariance) à condition de calculer ces descripteurs statistiques pour tous les couples de variables considérées deux à deux. Pour *N* variables, nous rassemblerons tous ces calculs dans une matrice carrée *N* par *N* qui croise tous les cas deux à deux possibles dans un même tableau.
+Dans un cas multivarié (plus de deux variables), nous pouvons toujours étudier les associations entre variables numériques à l'aide de *r* à condition de calculer ces descripteurs statistiques pour tous les couples de variables considérées deux à deux. Pour *N* variables, nous rassemblerons tous ces calculs dans une matrice carrée *N* par *N* qui croise tous les cas deux à deux possibles dans un même tableau.
 
 Prenons un exemple à trois variables. Le jeu de données `trees` rassemble la mesure du diamètre, de la hauteur et du volume de bois de cerisiers noirs. La matrice de corrélation peut se calculer à l'aide de `cor()` dans R, ou mieux, à l'aide de `correlation()` dans `SciViews::R`.
 
 ```{r}
 trees <- read("trees", package = "datasets")
-head(trees)
+tabularise$headtail(trees)
 trees_cor <- correlation(trees)
-trees_cor
+trees_cor |> tabularise()
 ```
 
 Vous noterez que :
@@ -152,7 +154,7 @@ Pour ces raisons seul le triangle inférieur (ou supérieur) est informatif. Le 
 summary(trees_cor)
 ```
 
-Voyez la page d'aide de `correlation()` pour plus d'information via `?correlation`. Vous pouvez passer un data frame à la fonction, ou encore, l'appeler via `correlation(data = df, ~ var1 + var2 + var3)` en utilisant une formule pour spécifier les variables du tableau à étudier. L'argument `use =` permet de spécifier quoi faire en cas de valeurs manquantes. Si vous indiquez `"complete.obs"`, toute ligne du tableau contenant au moins une valeur manquante sera éliminée avant le calcul. Avec `"pairwise.complete.obs"` les éliminations de valeurs manquantes se font pour chaque paire de variables individuellement des autres.
+Voyez la page d'aide de `correlation()` pour plus d'information via `?correlation`. Vous pouvez passer un data frame à la fonction, ou encore, utiliser `correlation(data = df, ~ var1 + var2 + var3)` avec une formule pour spécifier les variables à traiter. L'argument `use =` permet de spécifier quoi faire en cas de valeurs manquantes. Si vous indiquez `"complete.obs"`, toute ligne du tableau contenant au moins une valeur manquante sera éliminée avant le calcul. Avec `"pairwise.complete.obs"` les éliminations de valeurs manquantes se font pour chaque paire de variables individuellement des autres.
 
 ### Corrélogramme
 
@@ -221,7 +223,7 @@ lapply(ans_y, var)
 --->
 ````
 
-Que valent les moyennes, les variances les écart-types pour les quatre variables *x* ?
+Que valent les moyennes, les variances, les écarts-types pour les quatre variables *x* ?
 
 ```{r}
 fmean(ans_x)
@@ -231,7 +233,7 @@ fsd(ans_x)
 
 Nous voyons que les quatre variables ont identiquement la même moyenne, la même variance et le même écart-type.
 
-Que valent les moyennes, les variances les écart-types pour les quatre variables *y* ?
+Que valent les moyennes, les variances, les écarts-types pour les quatre variables *y* ?
 
 ```{r}
 fmean(ans_y)
@@ -247,7 +249,7 @@ fsd(ans_y)
 diag(correlation(ans_x, ans_y))
 ```
 
-Nous avons encore une fois quatre fois la même valeur... et pourtant :
+Nous avons à nouveau quatre fois la même valeur... et pourtant :
 
 ```{r}
 pl <- list(
@@ -271,14 +273,14 @@ La matrice de nuages de points part du même principe que la matrice de corréla
 GGally::ggscatmat(trees, 1:3)
 ```
 
-Comme dans le cas de la matrice de corrélation, les graphiques en nuage de points sur la diagonale ne seraient pas très utiles puisqu'ils représenteraient une variable par rapport à elle-même. Ils sont donc remplacés par des graphes de densité montrant la répartition des données pour chaque variable considérée individuellement. Sur le triangle supérieur, ce sont les coefficients de corrélation de Pearson qui sont indiqués, et sur le triangle inférieur, les différentes possibilités de nuages de points deux à deux. La variable sur l'axe des abscisses se lit dans la colonne au-dessus et la variable représentée sur l'axe des ordonnées se lit dans la ligne à droite. Par exemple, le graphique en bas à gauche correspond au diamètre en abscisse et au volume en ordonnée. Cette représentation graphique est donc complémentaire au corrélogramme.
+Comme dans le cas de la matrice de corrélation, les graphiques en nuage de points sur la diagonale ne seraient pas très utiles puisqu'ils représenteraient une variable par rapport à elle-même. Ils sont donc remplacés par des graphes de densité montrant la répartition des données pour chaque variable considérée individuellement. Sur le triangle supérieur, ce sont les coefficients de corrélation de Pearson qui sont indiqués. Sur le triangle inférieur, les différentes possibilités de nuages de points deux à deux sont représentées. La variable sur l'axe des abscisses se lit dans la colonne au-dessus et la variable représentée sur l'axe des ordonnées se lit dans la ligne à droite. Par exemple, le graphique en bas à gauche correspond au diamètre en abscisse et au volume en ordonnée. Cette représentation graphique est donc complémentaire au corrélogramme.
 
 ### Matrice de variances-covariances
 
 De même que nous pouvons calculer une matrice de corrélations, nous pouvons calculer une matrice de covariances, mais sachant que $cov_{x,x} = var_x$, nous avons également les variances le long de la diagonale. Pour cette raison, nous appelons ce tableau, une **matrice de variances-covariances**. Par exemple, pour le jeu de données `trees`, cela donne :
 
 ```{r}
-cov(trees)
+cov(trees) |> tabularise()
 ```
 
 Comme ces descripteurs statistiques ne sont pas normés, ils sont plus difficiles à interpréter. Nous préférons donc la matrice de corrélations pour étudier l'association entre plusieurs variables numériques. Néanmoins, la matrice de variances-covariances interviendra plus tard dans d'autres traitements statistiques et il est utile de la connaitre (par exemple, dans le cadre de l'ACP que nous étudierons en Science des Données Biologiques II).
@@ -324,7 +326,7 @@ C'est bien beau de pouvoir quantifier une corrélation, mais à partir de quand 
 
 Il existe aussi des variantes unilatérales à gauche ($H_1\ :\ r < 0$) ou à droite ($H_1\ :\ r > 0$) dans le cas où nous aurions des indications que l'association ne peut qu'être de type proportionnalité inverse ou directe, respectivement.
 
-Prenons l'exemple de *r* pour les deux variables les plus corrélées dans `trees` : `diameter` et `volume`. Notez la forme particulière de la formule à utiliser. Comme les deux variables sont sur le même pied d'égalité, il n'y a pas de raison d'en placer une à gauche du signe `~` dans la formule. On l'écrit alors `~ var1 + var2`. Choisissons notre seuil $\alpha$ à 5% avant d'effectuer le test, ensuite, considérons un test unilatéral à droite avec `alternative = "greater"` puisque le volume de bois ne peut qu'augmenter avec le diamètre de l'arbre (relation inverse pas crédible).
+Prenons l'exemple de *r* pour les deux variables les plus corrélées dans `trees` : `diameter` et `volume`. Notez la forme particulière de la formule à utiliser. Comme les deux variables sont sur le même pied d'égalité, il n'y a pas de raison d'en placer une à gauche du signe `~` dans la formule. On l'écrit alors `~ var1 + var2`. Choisissons notre seuil $\alpha$ à 5% avant d'effectuer le test, ensuite, considérons un test unilatéral à droite avec `alternative = "greater"` puisque le volume de bois ne peut qu'augmenter avec le diamètre de l'arbre (relation inverse non crédible ici).
 
 ```{r}
 cor.test(data = trees, ~ diameter + volume, alternative = "greater")
@@ -336,7 +338,7 @@ Comme la valeur *p* est inférieure à $\alpha$, nous pouvons rejeter $H_0$ et c
 cor.test(data = trees, ~ diameter + height, alternative = "greater")
 ```
 
-Elle est, elle aussi, significative au seuil $\alpha$ de 5%, mais de manière moins nette, puisque la valeur *p* vaut un peu plus de 0,1%. Que donnerait un test de Spearman sur ces mêmes variables ?
+Elle est, elle aussi, significative au seuil $\alpha$ de 5%. La valeur *p* vaut ici un peu plus de 0,1%. Que donnerait un test de Spearman sur ces mêmes variables ?
 
 ```{r}
 cor.test(data = trees, ~ diameter + height,
@@ -365,7 +367,7 @@ if (exists("assignment"))
     course.ids = c(
       'S-BIOG-027' = !"A12Ia_{YY}M_correlation"),
     course.urls = c(
-      'S-BIOG-027' = "https://classroom.github.com/a/..."),
+      'S-BIOG-027' = "https://classroom.github.com/a/IqgFScPW"),
     course.starts = c(
       'S-BIOG-027' = !"{W[35]+1} 13:00:00"),
     course.ends = c(
@@ -411,13 +413,14 @@ if (exists("assignment2"))
     toc = "Biométrie de l'oursin violet, part VI")
 -->
 ```
+
 ## Communication
 
 Savoir communiquer ses résultats est vital en science des données. Ce n'est pas si facile, car il faut pouvoir simplifier les analyses et utiliser au mieux les visuels (c'est-à-dire, les graphiques) pour raconter une histoire qui soit à la fois captivante et compréhensible. **Communiquer le fruit de ses recherches de la meilleure façon qui soit pour que les non-initiés puissent le comprendre fait partie du bagage indispensable du scientifique des données**.
 
 ![](images/sdd1_12/data-scientist-useful.jpg)
 
-Hans Rosling est sans nul doute très doué pour communiquer des résultats statistiques. La vidéo suivante est un peu longue (20min) et en anglais, mais elle en vaut vraiment la peine[^12-correlation-2]. De plus, il explique à quel point il est important de partager et de rassembler les données dans de grandes bases de données, et ensuite d'en tirer des études *utiles* pour l'humanité. C'est l'avenir des sciences des données, y compris en biologie, qu'il est en train de prédire là.
+Hans Rosling était sans nul doute l'un des plus doués pour communiquer des résultats statistiques. La vidéo suivante est un peu longue (20min) et en anglais, mais elle en vaut vraiment la peine[^12-correlation-2]. De plus, il explique à quel point il est important de partager et de rassembler les données dans de grandes bases de données, et ensuite d'en tirer des études *utiles* pour l'humanité. C'est l'avenir des sciences des données, y compris en biologie, qu'il est en train de prédire là à l'époque où il a tourné cette vidéo.
 
 [^12-correlation-2]: Vous pouvez activer les sous-titres en anglais via la barre de boutons en bas de la vidéo.
 
@@ -425,9 +428,9 @@ Hans Rosling est sans nul doute très doué pour communiquer des résultats stat
 vembedr::embed_youtube("hVimVzgtD6w", width = 770, height = 433)
 ```
 
-### Présentations R Markdown
+### Présentations R Markdown et Quarto
 
-Parmi tous les formats R Markdown, il en existe plusieurs adaptés aux présentations de type "PowerPoint". Le format **R Presentation** est très simple et parfaitement intégré dans RStudio. Divers formats compilés depuis R Markdown sont également disponibles. Les formats **ioslides** ou **Slidy**, ou **xaringan** sont adaptés aux explorateurs Web. Le format **Beamer** permet de créer une présentation en PDF. Enfin, il est possible de compiler sa présentation au format **PowerPoint**.
+Parmi tous les formats R Markdown ou Quarto, il en existe plusieurs adaptés aux présentations de type "PowerPoint". Le format **R Presentation** est très simple et parfaitement intégré dans RStudio. Divers formats compilés depuis R Markdown sont également disponibles. Les formats **ioslides** ou **Slidy**, ou **xaringan** sont adaptés aux explorateurs Web. Le format **Beamer** permet de créer une présentation en PDF. Enfin, il est possible de compiler sa présentation au format **PowerPoint**.
 
 Le format [**R Presentations**](https://support.posit.co/hc/en-us/sections/200130218-R-Presentations) (menu `File -> New file -> R Presentation` dans RStudio) est très simple pour créer des diapositives de présentation directement depuis Markdown sous forme HTML, et pouvant s'exécuter dans RStudio ou dans un explorateur Web.
 
@@ -437,13 +440,13 @@ Ce type de présentation est très bien intégré dans RStudio. Outre l'édition
 
 ![](images/sdd1_12/r-presentation2.png)
 
-Deux formats basés sur le HTML et JavaScript (comprenez, des formats qui s'exécutent dans un explorateur Web) sont aussi proposés par défaut via les types de documents R Markdown (menu `File -> New File -> R Markdown`, puis `Presentation`).
+Deux formats basés sur le HTML et JavaScript (comprenez, des formats qui s'exécutent dans un explorateur Web) sont aussi proposés par défaut via les types de documents R Markdown ou Quarto (menu `File -> New File -> R Markdown...` ou `File -> New File -> R Quarto Document`, puis `Presentation`).
 
 ![](images/sdd1_12/r-markdown-pres1.png)
 
 ![](images/sdd1_12/r-markdown-pres2.png)
 
-Les deux formats Web par défaut sont **ioslides** et **Slidy**. L'apparence et les fonctionnalités des deux systèmes diffèrent quelque peu. Le mieux est de tester les deux et de choisir celui qu'on préfère. La présentation apparaît dans une fenêtre séparée. Les possibilités de personnalisation sont plus poussées, mais elles se font à l'aide de feuilles de styles au format CSS. Cela impose de comprendre leur logique.
+Les deux formats Web par défaut sont **ioslides** et **Slidy** pour R Markdown ou le format est **Reveal JS** pour Quarto. L'apparence et les fonctionnalités des différents systèmes diffèrent quelque peu. Le mieux est de tester les différentes versions et de choisir celui qu'on préfère. La présentation apparaît dans une fenêtre séparée. Les possibilités de personnalisation sont plus poussées, mais elles se font à l'aide de feuilles de styles au format CSS. Cela impose de comprendre leur logique.
 
 ![](images/sdd1_12/r-markdown-pres3.png)
 
@@ -459,7 +462,7 @@ La quatrième option est de compiler un document au format **PowerPoint**. Il n'
 
 ![](images/sdd1_12/r-markdown-pres6.png)
 
-Les quatre formats **ioslides**, **Slidy**, **Beamer** et **PowerPoint** sont parfaitement intégrés à RStudio, avec un menu contextuel dans le bouton `Knit` qui permet de passer facilement de l'un à l'autre pour autant que vous n'utilisez pas des balises spécifiques à l'un de ces quatre formats.
+Les cinq formats **ioslides**, **Slidy**, **Reveal JS**, **Beamer** et **PowerPoint** sont parfaitement intégrés à RStudio, avec un menu contextuel dans le bouton `Knit` ou `Render` qui permet de passer facilement de l'un à l'autre pour autant que vous n'utilisez pas des balises spécifiques à l'un de ces quatre formats.
 
 ![](images/sdd1_12/r-markdown-pres4.png)
 
@@ -468,7 +471,7 @@ Enfin, quelques packages R additionnels proposent d'autres formats de présentat
 ![](images/sdd1_12/r-markdown-pres6.png)
 
 ```{block, type='info'}
-Quel type de présentation R Markdown choisir au final ? Toute cette panoplie d'options ne facilite pas notre choix. En fait, c'est plus une question de goût personnel. Essayez les différentes options par vous-même. Le choix principal est au final entre un format HTML ou PDF. Le format PDF est, par définition, plus portable. Cependant, il ne permet que du contenu statique. Si vous avez des gifs animés, des graphiques interactifs, ou des vidéos, alors orientez-vous plutôt vers un moteur HTML/Javascript.
+Quel type de présentation R Markdown ou Quarto choisir au final ? Toute cette panoplie d'options ne facilite pas notre choix. En fait, c'est plus une question de goût personnel. Essayez les différentes options par vous-même. Le choix principal est, au final, entre un format HTML, PDF ou PowerPoint. Le format PDF est, par définition, plus portable. Cependant, il ne permet que du contenu statique. Si vous avez des gifs animés, des graphiques interactifs, ou des vidéos, alors orientez-vous plutôt vers un moteur HTML/Javascript.
 ```
 
 ```{=html}
@@ -476,16 +479,17 @@ Quel type de présentation R Markdown choisir au final ? Toute cette panoplie d
 
 **Note : il est indispensable de pouvoir synthétiser un travail complexe. Dans votre carrière de chercheur, vous serez souvent confronté à devoir réaliser des présentations. Réalisez une présentation de maximum cinq diapositives dans le format de votre souhait.** -->
 ```
+
 ## Critique statistique
 
 `r img("sdd1_12/cars-travolta.gif")`
 
-Les statistiques ont mauvaise presse auprès de certaines personnes qui pensent qu'on peut leurs faire dire tout et son contraire. Cela a même donné lieu à des ouvrages comme "[Attention, statistiques ! Comment en déjouer les pièges](https://www.editionsladecouverte.fr/catalogue/index-Attention_statistiques__-9782707172389.html)" ou "[How to lie with statistics](https://en.wikipedia.org/wiki/How_to_Lie_with_Statistics)". Derrière des titres provocateurs, ces ouvrages présentent, en fait, de manière sérieuse, les pièges principaux et les moyens de les déjouer. Car, en réalité, ce n'est pas l'usage des statistiques qui est en cause ici, mais son **mauvais** usage. Voir aussi "[Statistical reasoning for everyday life](https://www.pearson.com/us/higher-education/product/Bennett-Statistical-Reasoning-for-Everyday-Life-5th-Edition/9780134494043.html)".
+Les statistiques ont mauvaise presse auprès de certaines personnes qui pensent qu'on peut leur faire dire tout et son contraire. Cela a même donné lieu à des ouvrages comme "[Attention, statistiques ! Comment en déjouer les pièges](https://www.editionsladecouverte.fr/catalogue/index-Attention_statistiques__-9782707172389.html)" ou "[How to lie with statistics](https://en.wikipedia.org/wiki/How_to_Lie_with_Statistics)". Derrière des titres provocateurs, ces ouvrages présentent, en fait, de manière sérieuse les pièges principaux et les moyens de les déjouer. Car, en réalité, ce n'est pas l'usage des statistiques qui est en cause ici, mais son **mauvais** usage. Voir aussi "[Statistical reasoning for everyday life](https://www.pearson.com/en-us/subject-catalog/p/statistical-reasoning-for-everyday-life/P200000007457/9780137561544)".
 
 ![](images/sdd1_12/caution-wet-floor.jpg)
 
 ```{block, type='info'}
-Dans la littérature scientifique et tout autour de nous, nous pouvons trouver des exemples de mauvais usages des statistiques (application *erronée* de méthodes statistiques). Quelque fois, il s'agit de triche manifeste, mais la plupart du temps c'est par ignorance. Développer un **esprit critique** statistique est important pour pouvoir démasquer ces diverses situations et ne pas tomber soi-même dans les pièges les plus grossiers.
+Dans la littérature scientifique et tout autour de nous, nous pouvons trouver des exemples de mauvais usages des statistiques (application *erronée* de méthodes statistiques). Quelquefois, il s'agit de triche manifeste, mais la plupart du temps c'est par ignorance. Développer un **esprit critique** statistique est important pour pouvoir démasquer ces diverses situations et ne pas tomber soi-même dans les pièges les plus grossiers.
 ```
 
 ![](images/sdd1_12/graph-upside-down.jpg)
@@ -511,7 +515,7 @@ Voici quelques conseils qui vous aideront à développer votre esprit critique s
 
 `r img("sdd1_12/wrong-graph.gif")`
 
-Pour terminer ce module, nous vous proposons quelques situations (soit des problèmes, soit des graphiques) qui ont toutes en commun d'être erronées. À vous de trouver ce qui ne va pas. Pour ne pas fausser la donne, les réponses ne **sont pas** fournies dans ce document, mais seront discutées en classes tous ensembles.
+Pour terminer ce module, nous vous proposons quelques situations (soit des problèmes, soit des graphiques) qui ont toutes en commun d'être erronées. À vous de trouver ce qui ne va pas. Pour ne pas fausser la donne, les réponses ne **sont pas** fournies dans ce document, mais seront discutées en classes tous ensemble.
 
 ------------------------------------------------------------------------
 
@@ -703,7 +707,7 @@ Un chercheur dans une industrie chimique s'intéresse à l'effet d'un nouvel ins
 
 ------------------------------------------------------------------------
 
-##### Virus zika {.unnumbered}
+##### Virus Zika {.unnumbered}
 
 ![](images/sdd1_12/wrong-graph-nbc.jpg)
 
@@ -730,7 +734,7 @@ if (exists("assignment"))
     course.ids = c(
       'S-BIOG-027' = !"A12Ia_{YY}M_correlation"),
     course.urls = c(
-      'S-BIOG-027' = "https://classroom.github.com/a/..."),
+      'S-BIOG-027' = "https://classroom.github.com/a/IqgFScPW"),
     course.starts = c(
       'S-BIOG-027' = !"{W[35]+1} 13:00:00"),
     course.ends = c(
