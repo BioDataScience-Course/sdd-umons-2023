@@ -743,6 +743,39 @@ if (exists("assignment"))
     toc = "Critique statistique")
 ```
 
+
+## Challenge
+
+Tout au long des modules 7 à 12, vous avez appris à réaliser des tests d'hypothèses avec R et RStudio. Il est maintenant temps de faire un bilan de vos capacités à écrire le code R pour reproduire de tels tests dans un **challenge de rapidité pour la réalisation de tests d'hypothèses.** Vous vous confronterez entre vous de manière individuelle pour déterminer celui ou celle qui arrivera à reproduire fidèlement le plus d'analyses possible.
+
+##### À vous de jouer ! {.unnumbered}
+
+```{r assign_A12Ca_infer, echo=FALSE, results='asis'}
+if (exists("challenge"))
+  challenge("A12Ca_infer", part = NULL,
+    url = "https://github.com/BioDataScience-Course/A12Ca_infer",
+    course.ids = c(
+      'S-BIOG-027' = !"A12Ca_{YY}M_infer"),
+    course.urls = c(
+      'S-BIOG-027' = "https://classroom.github.com/a/mnRje_EM"),
+    course.starts = c(
+      'S-BIOG-027' = !"{W[35]+5} 10:00:00"),
+    course.ends = c(
+      'S-BIOG-027' = !"{W[35]+5} 13:00:00"),
+    toc = "Challenge tests d'hypothèses")
+```
+
+::: nocourse
+Vous n'êtes pas correctement enregistré pour ce cours. Vous ne pouvez pas participer à ce challenge. Si vous êtes étudiant•e de l'UMONS, vérifiez que vous vous êtes bien enregistré•e via Moodle...
+:::
+
+::: {.S-BIOG-006 .S-BIOG-027}
+Vous pouvez soumettre vos résultats pendant une période de temps précise via l'application ci-dessous :
+
+`r launch_shiny("https://sdd.umons.ac.be/A12Ca_infer/", height = 800, delay = 20, toc = NULL, alt1 = "*Cliquez pour visualiser le classement.*", alt2 = "*Cliquez pour visualiser le classement.*")`
+:::
+
+
 ## Récapitulatif des exercices
 
 Vous venez de terminer le module 12. Ce module vous a permis d'apprendre une grande partie des subtilités qui se cachent derrière l'association de variables. Il vous a également permis de vous initier à la critique statistique Bravo ! Vous êtes arrivé à la fin du premier cours de Science des données 1.
