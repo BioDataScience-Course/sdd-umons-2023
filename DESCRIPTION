@@ -26,7 +26,7 @@ Imports:
     pwr,
     rmarkdown,
     scales,
-    SciViews
+    SciViews,
     sessioninfo,
     skimr,
     vembedr
