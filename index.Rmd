@@ -115,6 +115,12 @@ N'hésitez pas à expérimenter, tester ou essayer de nouvelles idées (même au
 vembedr::embed_youtube("9vJRopau0g0", width = 770, height = 433)
 ```
 
+S'il vous semble que votre méthode de travail ou votre motivation n'est pas optimale, ou si vous trouvez la matière trop difficile, essayez la **méthode en échelle** qui consiste à travailler étape par étape en se concentrant d'abord sur ce qui parait facile pour vous, et ensuite, en repassant sur la matière tout en travaillant progressivement les autres aspects. Ceci est très bien expliqué dans la vidéo suivante :
+
+```{r, echo=FALSE}
+vembedr::embed_youtube("u6ks5OCQR9I", width = 770, height = 433)
+```
+
 ## Approche pédagogique {.unnumbered}
 
 Ce livre en ligne ainsi que tout le matériel pédagogique cité plus haut ont été développés pour être employés en pédagogie active en classe inversée. On peut résumer cette approche en deux phases. Vous apprenez d'abord à la maison, nous appliquons *ensuite* en présentiel.
