@@ -1,6 +1,6 @@
 # Tutoriels "learnr" {#learnr}
 
-En complément de ce cours en ligne, vous allez utiliser également des tutoriels interactifs construits avec [learnr](https://rstudio.github.io/learnr/). Si ce n'est déjà fait, commencez par installer ces tutoriels dans votre SciViews Box via l'application `BioDataScience` (voir \@ref(install-tuto)).
+En complément de ce cours en ligne, vous allez utiliser également des tutoriels interactifs construits avec [learnr](https://rstudio.github.io/learnr/). Si ce n'est déjà fait, commencez par installer ces tutoriels dans votre SciViews Box via l'application `BioDataScience`.
 
 Allez dans le bouton **Addins** dans la barre d'outils de RStudio et sélectionnez `Run SDD I tutorial or app`, ou entrez l'instruction ci-dessous dans la fenêtre **Console** de RStudio suivie de la touche `Entrée` :
 
